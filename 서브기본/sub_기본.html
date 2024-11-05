@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>lafuma</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/footer_family.js"></script>
+    <style>
+      /*########## 공통 ##########*/
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: #000;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: arial, sans-serif;
+      }
+      #wrap {
+        /*min-width:1600px;*/
+        max-width: 1920px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      img {
+        border: none;
+      }
+      /*########### 스킵네비게이션 ###########*/
+      #skipNav {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -30px;
+        z-index: 9999;
+      }
+      #skipNav p a {
+        display: block;
+        width: 100%;
+        background-color: #000;
+        text-align: center;
+        line-height: 30px;
+        position: absolute;
+        color: #fff;
+      }
+      #skipNav p a:focus {
+        top: 30px;
+        color: #ff0;
+      }
+      /*####################################*/
+
+      /*########## headerWrap ##########*/
+      #headerWrap {
+        width: 100%;
+        height: 115px;
+        margin: 0 auto;
+        border-bottom: 1px solid #ddd;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 9998;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s;
+      }
+
+      #header {
+        width: 1600px;
+        margin: 0 auto;
+        position: relative;
+      }
+      /*  헤더 부분 보더 바텀 */
+
+      /*##### headerWrap + h1 #####*/
+      #header h1 {
+        width: 174px;
+        height: 45px;
+        position: absolute;
+        left: 100px;
+        top: 30px;
+      }
+      /*##### headerWrap + infoMenu #####*/
+      .infoMenu {
+        width: 1590px;
+        text-align: right;
+        padding-right: 10px;
+        margin: 0 auto;
+      }
+      .infoMenu li {
+        display: inline;
+        font-size: 0.8em;
+      }
+
+      .infoMenu li a {
+        padding: 0 10px;
+        color: #000;
+      }
+      /*##### gnb #####*/
+      #gnb {
+        width: 1094px;
+        height: 98px;
+        margin-left: 250px;
+        font-weight: bold;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #gnb .navWrap {
+        height: 48px;
+        line-height: 38px;
+        padding: 30px 0 20px 0;
+      }
+
+      #gnb .navWrap li {
+        width: 180px;
+        height: 39px;
+        float: left;
+        text-align: center;
+      }
+
+      #gnb .navWrap li ul {
+        display: none;
+      }
+
+      #gnb .lfmallImg {
+        width: 82px;
+        position: absolute;
+        left: 1495px;
+        top: 50px;
+      }
+      #gnb .lfmallImg a {
+        width: 100%;
+        display: block;
+      }
+      #gnb img {
+        width: 100%;
+      }
+
+      /*##### 기능 #####*/
+
+      #gnb ul li:hover {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb .navWrap:hover ul li {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb ul li:hover ul,
+      #gnb ul li:focus ul {
+        display: block;
+      }
+
+      #mobGnb {
+        display: none;
+      }
+
+      /*########## footer ##########*/
+      #footer {
+        width: 100%;
+        margin: 50px auto 0; /*border-top:2px solid #000;*/
+      }
+      #footer .footerline {
+        width: 1600px;
+        margin: 0 auto;
+      }
+      #footer .footer_nav {
+        width: 1310px;
+        height: 60px;
+        margin: 0 auto;
+      }
+      #footer .footer_n {
+        width: 786px;
+        height: 100%;
+        float: left;
+      }
+      #footer .footer_n ul {
+        width: 786px;
+        height: 100%;
+        line-height: 60px;
+      }
+      #footer .footer_n ul li {
+        display: inline;
+        padding-right: 30px;
+        font-size: 14px;
+      }
+      #footer .footer_n .color_gray {
+        color: #8f8f8e;
+      }
+
+      #footer .tooter_sns {
+        width: 524px;
+        height: 100%;
+        float: left;
+      }
+      #footer .tooter_sns ul {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        text-align: right;
+      }
+      #footer .tooter_sns ul li {
+        width: 30px;
+        display: inline-block;
+        padding: 0 15px;
+      }
+      #footer .tooter_sns ul li a {
+        width: 30px;
+        height: 30px;
+        display: block;
+      }
+      #footer .tooter_sns ul li a img {
+        width: 30px;
+        height: 30px;
+      }
+      #footer .footerArea {
+        width: 1310px;
+        height: 50px;
+        margin: 0 auto;
+      }
+
+      #footer .footer_family {
+        width: 786px;
+        height: 100%;
+        float: left;
+      }
+      #footer .footer_family_a {
+        width: 150px;
+        display: block;
+        float: left;
+      }
+      #footer .family_site {
+        width: 150px;
+        float: left;
+        position: relative;
+      }
+      #footer .family_site button {
+        border: 1px solid #fff;
+        background-color: #fff;
+      }
+      #footer .family_site ul {
+        width: 200px;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        background-color: #666;
+      }
+      #footer .family_site ul li {
+        padding: 5px 0;
+        display: none;
+        border-bottom: 1px dashed #ccc;
+      }
+      #footer .family_site ul li a {
+        color: #aaa;
+        display: block;
+      }
+      #footer .family_site:hover ul {
+        display: block;
+      }
+      /*  기능 */
+
+      #footer .copy {
+        width: 40%;
+        height: 100%;
+        float: left;
+        text-align: right;
+        color: #ccc;
+      }
+      @media all and (min-width: 1025px) and (max-width: 9999px) {
+        /* 
+				headerWrap 에 호버하면 높이값이 증가하는 부분을
+				자녀의 li에 호버하면 높이값이 증가하게 바꾸려 시도중.				
+			*/
+        /*	#headerWrap:hover{height:320px; transition:all 0.7s;}*/
+
+        /*	#product:hover #headerWrap{height:320px; transition:all 0.7s;}*/
+        .mobileBT,
+        .mobileBT2 {
+          display: none;
+        }
+      }
+
+      /* 태블릿 pc */
+      @media all and (min-width: 768px) and (max-width: 1024px) {
+        #header {
+          width: 768px;
+        }
+        #gnb .navWrap .product:hover #headerWrap {
+          height: 320px;
+          transition: all 0.7s;
+        }
+        /*	#headerWrap:hover{height:320px; transition:all 0.7s;}*/
+        .mobileBT,
+        .mobileBT2 {
+          display: none;
+        }
+        /*##### headerWrap + h1 #####*/
+        #header h1 {
+          left: 30px;
+          top: 0px;
+        }
+        /*##### headerWrap + infoMenu #####*/
+        .infoMenu {
+          width: 758px;
+        }
+        /*##### gnb #####*/
+        #gnb {
+          width: 758px;
+        }
+        #gnb .navWrap li {
+          width: 126px;
+        }
+        #gnb .lfmallImg {
+          left: 660px;
+          top: 28px;
+        }
+        /*##### container #####*/
+        #container {
+          width: 100%;
+        }
+        /*########## visualWrap ##########*/
+        #visualWrap {
+          width: 100%;
+          height: 420px;
+        }
+
+        #visual {
+          background-size: 100%;
+        }
+        #visual .left_button {
+          display: none;
+        }
+        #visual .right_button {
+          display: none;
+        }
+        #visual .main_text {
+          width: 200px;
+          height: 120px;
+          left: 10%;
+          top: 25%;
+          font-size: 18px;
+          padding: 5%;
+        }
+        #visual .main_text em {
+          font-size: 15px;
+        }
+        /*########## section_item ##########*/
+        #section_item {
+          width: 100%;
+          height: 1200px;
+          margin: 50px auto 0;
+        }
+        #section_item .titleBox {
+          width: 100%;
+          height: 56px;
+          padding: 0;
+          text-align: center;
+        }
+        #section_item .title {
+          width: 70%;
+        }
+        /*##### button #####*/
+        #section_item .buttonArea {
+          width: 20%;
+        }
+        #section_item ul {
+          width: 100%;
+          height: 100%;
+        }
+        #section_item ul li {
+          width: 48%;
+          height: 45%;
+          padding: 1% 1% 8% 1%;
+        }
+        #section_item ul li p {
+          width: 100%;
+        }
+        #section_item ul li p a {
+          display: block;
+          width: 80%;
+          height: 80%;
+          margin: 0 auto;
+        }
+        #section_item ul li a img {
+          width: 100%;
+        }
+        #section_item ul li p em {
+          width: 100%;
+        }
+        #section_item .item_box span {
+          width: 100%;
+          font-size: 8px;
+          height: 13px;
+          line-height: 13px;
+          padding-left: 10%;
+        }
+
+        #section_item:after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+        /*########## section_life ##########*/
+        #section_life {
+          width: 100%;
+          height: 800px;
+          margin: 50px auto;
+        }
+        #section_life div {
+          float: none;
+          width: 100%;
+          height: 30%;
+          background-position: center;
+        }
+        /*	
+				#section_life div p{width:100%;height:100%;			
+					text-align:center;			
+					color:#fff;			
+					}
+				#section_life span{width:340px;height:30px;
+					margin-top:300px;
+					font-size:20px;
+					font-weight:bold;			
+					display:none;
+					}s
+				#section_life a{width:150px;height:50px;	
+					line-height:50px;		
+					color:#fff;float:left;
+					border:1px solid #fff;
+					margin:10px 10px;
+					display:none;
+					}
+				*/
+        #section_life h3 {
+          display: block;
+          text-align: left;
+          left: 0%;
+          top: -6px;
+        }
+        /*###########  technology #############*/
+        #section_tech {
+          margin: 50px auto;
+        }
+        #section_tech .technology {
+          width: 100%;
+          height: 500px;
+        }
+        #section_tech .text_button {
+          left: 4%;
+          top: 24%;
+        }
+
+        /*##### camping lookbook #####*/
+        #section_lookbook {
+          width: 100%;
+          height: 260px;
+          margin: 0 auto 60px;
+          position: relative;
+          background-image: url("img/lookbook.jpg");
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+        #section_lookbook .lookbook_tit {
+          width: 100%;
+          height: 50px;
+          line-height: 4px;
+        }
+        #section_lookbook h3 {
+          width: 400px;
+          left: 53%;
+          font-size: 25px;
+        }
+        #section_lookbook .lookbook_text {
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          left: 0px;
+          top: 30%;
+        }
+        #section_lookbook .lookbook_button {
+          width: 95px;
+          height: 20px;
+          line-height: 20px;
+          font-size: 14px;
+          margin: 5px auto 0;
+        }
+        /*########## section_event ##########*/
+        #section_event {
+          width: 100%;
+          overflow: hidden;
+          margin: 0 auto;
+        }
+        /*########## social  + .video_event ##########*/
+        .video_event {
+          width: 100%;
+        }
+        .video_event div {
+          float: none;
+          margin: 0 auto;
+        }
+        .video_event div .textArea {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 10px;
+          padding: 0;
+        }
+        .video_event .imgArea {
+          width: 100%;
+          height: 100%;
+        }
+        .video_event .imgArea .event_img {
+          width: 100%;
+        }
+        .video_event .imgArea .event_img a {
+          width: 100%;
+        }
+        .video_event .imgArea .more a {
+          width: 100%;
+        }
+        .video_event .imgArea .event_img a img {
+          width: 100%;
+        }
+        .video_event .more {
+          right: 0;
+          bottom: 0;
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+        }
+
+        /*########## social ##########*/
+        #social .sns_icon {
+          width: 100%;
+          text-align: center;
+        }
+        #social {
+          width: 100%;
+          margin: 50px auto 50px;
+        }
+        #social ul {
+          width: 87%;
+        }
+        #social ul li {
+          width: 46%;
+        }
+        #social ul li a {
+          width: 100%;
+        }
+        #social ul li a img {
+          width: 100%;
+        }
+
+        /*########## footer ##########*/
+        #footer {
+          width: 100%;
+          overflow: hidden;
+          margin: 0px auto 0; /*border-top:2px solid #000;*/
+        }
+        #footer .footerline {
+          width: 100%;
+          margin: 0 auto;
+        }
+        #footer .footerline img {
+          width: 100%;
+          height: 5px;
+        }
+        #footer .footer_nav {
+          width: 100%;
+          height: 60px;
+          margin: 0 auto;
+        }
+        #footer .footer_n {
+          width: 100%;
+          height: 60%;
+        }
+        #footer .footer_n ul {
+          width: 100%;
+          height: 100%;
+          line-height: 25px;
+        }
+        #footer .footer_n ul li {
+          display: inline-block;
+          padding: 0 4%;
+          font-size: 15px;
+        }
+        #footer .tooter_sns {
+          width: 100%;
+          height: 55%;
+          display: none;
+        }
+        /*
+				#footer .tooter_sns ul{width:100%;height:45px;margin-top:0px;
+					text-align:center;
+					}
+				#footer .tooter_sns ul li{width:30px;display:inline-block;padding:0 15px;
+					}
+				#footer .tooter_sns ul li a{width:30px;height:30px; display:block;}
+				#footer .tooter_sns ul li a img{width:30px; height:30px;}
+				*/
+        #footer .footerArea {
+          width: 100%;
+        }
+        #footer .footer_family {
+          width: 60%;
+          text-align: center;
+          margin: 0 20%;
+        }
+        #footer .copy {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      /* 스마트폰 가로 버전 */
+      @media all and (min-width: 480px) and (max-width: 767px) {
+        #wrap {
+          width: 100%;
+        }
+        #header {
+          width: 100%;
+        }
+        #headerWrap {
+          height: 45px;
+          background-color: rgba(0, 0, 0, 0);
+          outline: 1px solid #ccc;
+          position: static;
+          overflow-x: hidden;
+        }
+        /*##### headerWrap + h1 #####*/
+        #header h1 {
+          left: 0px;
+          top: 0px;
+          width: 100%;
+          height: 40px;
+          background-color: #fff;
+          line-height: 40px;
+          overflow-y: hidden;
+        }
+        #header h1 a {
+          display: block;
+          width: 100px;
+          height: 30px;
+          margin: 0 auto;
+        }
+        #header h1 a img {
+          width: 100%;
+          height: 100%;
+        }
+        /*##### headerWrap + infoMenu #####*/
+        .infoMenu {
+          width: 100%;
+        }
+        /*##### gnb #####*/
+        #gnb,
+        .infoMenu {
+          display: none;
+        }
+
+        #mobGnb {
+          display: block;
+          z-index: 9999;
+          /*	position:absolute;*/
+          position: fixed;
+          background-color: rgba(200, 200, 200, 1);
+          top: 0px;
+          left: -800px;
+          width: 100%;
+          height: 100%;
+          transition: all 0.5s;
+        }
+        #mobGnb .navWrap {
+          width: 100%;
+          height: 60%;
+          padding: 5% 0;
+        }
+        #mobGnb .navWrap li {
+          width: 100%;
+          padding: 15px 0;
+          text-indent: 10px;
+        }
+        #mobGnb .navWrap li a {
+          color: #fff;
+          font-size: 25px;
+          width: 100%;
+          display: block;
+          text-shadow: 2px 1px 0px rgba(0, 0, 0, 1);
+        }
+        #mobGnb .navWrap li ul li {
+          height: 30px;
+          line-height: 30px;
+          padding: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #mobGnb .navWrap li ul li a {
+          font-size: 16px;
+          text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+        #mobGnb .navWrap li ul:after {
+          display: block;
+          content: "";
+          clear: both;
+        }
+        .mobInfo {
+          width: 100%;
+          height: 130px;
+          padding-top: 15%;
+          text-align: center;
+          background-color: rgba(150, 150, 150, 1);
+          /*	position:absolute;
+						bottom:0;*/
+        }
+        .mobInfo li {
+          font-size: 20px;
+          display: inline-block;
+        }
+        .mobInfo li a {
+          color: #555;
+        }
+        .mobInfo li:first-child:after {
+          content: "|";
+          color: #ccc;
+        }
+
+        .mobileBT,
+        .mobileBT2 {
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          right: 5px;
+          top: 8px;
+          text-align: center;
+          line-height: 0.2;
+          overflow-y: hidden;
+          overflow-x: hidden;
+        }
+        .mobileBT span,
+        .mobileBT2 span {
+          font-size: 50px;
+          display: block;
+        }
+        .mobileBT span {
+          color: #eee;
+        }
+        .mobileBT img,
+        .mobileBT2 img {
+          width: 100%;
+          height: 100%;
+        }
+
+        /*########## visualWrap ##########*/
+        #visualWrap {
+          width: 100%;
+          height: 150px;
+          margin-top: 0px;
+        }
+
+        #visual {
+          background-size: 100%;
+          height: 100%;
+          position: relative;
+        }
+
+        #visual .left_button {
+          display: none;
+        }
+        #visual .right_button {
+          display: none;
+        }
+        #visual .main_text {
+          width: 75px;
+          height: 35px;
+          left: 10%;
+          top: 1%;
+          font-size: 10px;
+          padding: 5%; /*line-height:35px;*/
+        }
+        #visual .main_text em {
+          font-size: 11px;
+        }
+        #visual .box2 {
+          display: none;
+        }
+        #visual .box3 {
+          width: 100%;
+          height: 30px;
+          font-size: 8px;
+          line-height: 30px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          font-weight: bold;
+          display: block;
+        }
+
+        /*########## section_item ##########*/
+        #section_item {
+          width: 100%;
+          height: initial;
+          margin: 50px auto 0;
+          overflow: hidden;
+        }
+        #section_item .titleBox {
+          width: 100%;
+          height: 30px;
+          padding: 0;
+          text-align: center;
+        }
+        #section_item .title {
+          width: 90%;
+          height: 100%;
+          font-size: 20px;
+          margin-left: 0;
+          margin: 0 5%;
+        }
+        #section_item .title span {
+          font-size: 17px;
+          padding-left: 1%;
+        }
+        /*##### button #####*/
+        #section_item .buttonArea {
+          width: 100%;
+        }
+        #section_item ul {
+          width: 100%;
+          height: initial;
+          float: left;
+          text-align: center;
+        }
+        #section_item ul li {
+          width: 300px;
+          height: initial;
+          padding: 1% 1% 8% 1%;
+          float: none;
+          margin: 0 auto;
+        }
+        #section_item ul li p {
+          width: 100%;
+          height: 100%;
+        }
+        #section_item ul li p a {
+          display: block;
+          width: 80%;
+          margin: 0 auto;
+        }
+        #section_item ul li a img {
+          width: 100%;
+          height: 100%;
+        }
+        #section_item ul li p em {
+          width: 100%;
+          height: 35px;
+          font-size: 10px;
+          line-height: 15px;
+        }
+        #section_item .item_box span {
+          width: 100%;
+          font-size: 8px;
+          height: 13px;
+          line-height: 13px;
+          padding-left: 10%;
+        }
+        #section_item .buttonArea {
+          display: none;
+        }
+        #section_item:after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+        /*	#section_item ul:after{content:""; display:block; clear:both;} */
+        /*########## section_item ##########*/
+        /*########## section_life ##########*/
+        #section_life {
+          width: 100%;
+          height: 800px;
+          margin: 50px auto 0;
+        }
+        #section_life div {
+          float: none;
+          width: 100%;
+          height: 30%;
+          background-position: center;
+        }
+        /*	
+						#section_life div p{width:100%;height:100%;			
+							text-align:center;			
+							color:#fff;			
+							}
+						#section_life span{width:340px;height:30px;
+							margin-top:300px;
+							font-size:20px;
+							font-weight:bold;			
+							display:none;
+							}s
+						#section_life a{width:150px;height:50px;	
+							line-height:50px;		
+							color:#fff;float:left;
+							border:1px solid #fff;
+							margin:10px 10px;
+							display:none;
+							}
+						*/
+        #section_life h3 {
+          display: block;
+          text-align: left;
+          left: 0%;
+          top: -6px;
+        }
+
+        /*###########  technology #############*/
+        #section_tech {
+          margin: 0px auto 30px;
+          height: 300px;
+        }
+        #section_tech .technology {
+          width: 100%;
+          height: 100%;
+        }
+        #section_tech .text_button {
+          left: 4%;
+          top: 20%;
+          font-size: 25px;
+        }
+
+        /*##### camping lookbook #####*/
+        #section_lookbook {
+          width: 100%;
+          height: 155px;
+          margin: 0 auto 60px;
+          position: relative;
+          background-image: url("img/lookbook.jpg");
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+        #section_lookbook .lookbook_tit {
+          width: 100%;
+          height: 50px;
+          line-height: 4px;
+        }
+        #section_lookbook h3 {
+          width: 400px;
+          left: 53%;
+          font-size: 15px;
+        }
+        #section_lookbook .lookbook_text {
+          width: 100%;
+          height: 100%;
+          font-size: 12px;
+          left: 0px;
+          top: 15%;
+        }
+        #section_lookbook .lookbook_button {
+          width: 95px;
+          height: 20px;
+          line-height: 20px;
+          font-size: 14px;
+          margin: 5px auto 0;
+        }
+
+        /*########## section_event ##########*/
+        #section_event {
+          width: 100%;
+          overflow: hidden;
+          margin: 0 auto;
+        }
+        /*########## social  + .video_event ##########*/
+        .video_event {
+          width: 100%;
+        }
+        .video_event div {
+          width: 100%;
+          margin-right: 0;
+        }
+        .video_event .imgArea {
+          width: 100%;
+          height: 100%;
+        }
+        .video_event .imgArea .event_img {
+          width: 100%;
+        }
+        .video_event .imgArea .more {
+          width: 15%;
+        }
+        .video_event .imgArea .event_img a {
+          width: 100%;
+        }
+        .video_event .imgArea .more a {
+          width: 100%;
+        }
+        .video_event .imgArea .event_img a img {
+          width: 100%;
+        }
+        .video_event .more {
+          right: 0;
+          bottom: 0;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+        }
+
+        .video_event div .textArea {
+          width: 100%;
+        }
+        /*########## social ##########*/
+
+        #social .sns_icon {
+          width: 100%;
+          text-align: center;
+        }
+        #social {
+          width: 100%; /*height:858px;*/
+          height: 100%;
+          margin: 50px auto 50px;
+          overflow: hidden;
+        }
+        #social ul {
+          width: 279px;
+          height: 100%;
+          overflow: hidden;
+          margin: 0 auto;
+        }
+        #social ul li {
+          width: 122px;
+          padding: 2%;
+          float: left;
+          margin: 1px;
+        }
+        #social ul li a {
+          width: 100%;
+          height: 100%;
+          display: block;
+          text-align: center;
+        }
+        #social ul li a img {
+          width: 122px;
+          height: 122px;
+        }
+
+        /*########## footer ##########*/
+        #footer {
+          width: 100%;
+          overflow: hidden;
+          margin: 0px auto 0; /*border-top:2px solid #000;*/
+        }
+        #footer .footerline {
+          width: 100%;
+          margin: 0 auto;
+        }
+        #footer .footerline img {
+          width: 100%;
+          height: 5px;
+        }
+        #footer .footer_nav {
+          width: 100%;
+          height: 60px;
+          margin: 0 auto;
+        }
+        #footer .footer_n {
+          width: 100%;
+          height: 60%;
+        }
+        #footer .footer_n ul {
+          width: 100%;
+          height: 100%;
+          line-height: 25px;
+        }
+        #footer .footer_n ul li {
+          display: inline-block;
+          padding-right: 5%;
+          font-size: 12px;
+        }
+        #footer .tooter_sns {
+          width: 100%;
+          height: 55%;
+          display: none;
+        }
+        /*
+					#footer .tooter_sns ul{width:100%;height:45px;margin-top:0px;
+						text-align:center;
+						}
+					#footer .tooter_sns ul li{width:30px;display:inline-block;padding:0 15px;
+						}
+					#footer .tooter_sns ul li a{width:30px;height:30px; display:block;}
+					#footer .tooter_sns ul li a img{width:30px; height:30px;}
+					*/
+        #footer .footerArea {
+          width: 100%;
+        }
+        #footer .footer_family {
+          width: 100%;
+          text-align: center;
+        }
+        #footer .copy {
+          width: 100%;
+          text-align: center;
+        }
+      }
+      /* 스마트폰 세로 버전 */
+      @media all and (min-width: 320px) and (max-width: 479px) {
+        #wrap {
+          width: 100%;
+        }
+        #header {
+          width: 100%;
+        }
+        #headerWrap {
+          height: 45px;
+          background-color: rgba(0, 0, 0, 0);
+          outline: 1px solid #ccc;
+          position: static;
+          overflow-x: hidden;
+        }
+
+        /*##### headerWrap + h1 #####*/
+        #header h1 {
+          left: 0px;
+          top: 0px;
+          width: 100%;
+          height: 40px;
+          background-color: #fff;
+          position: static;
+          line-height: 40px;
+          overflow-y: hidden;
+        }
+        #header h1 a {
+          display: block;
+          width: 100px;
+          height: 30px;
+          margin: 0 auto;
+        }
+        #header h1 a img {
+          width: 100%;
+          height: 100%;
+        }
+        /*##### headerWrap + infoMenu #####*/
+        .infoMenu {
+          width: 100%;
+        }
+        /*##### gnb #####*/
+        #gnb,
+        .infoMenu {
+          display: none;
+        }
+
+        #mobGnb {
+          display: block;
+          z-index: 9999;
+          /*	position:absolute;*/
+          position: fixed;
+          background-color: rgba(200, 200, 200, 1);
+          top: 0px;
+          left: -800px;
+          width: 100%;
+          height: 100%;
+          transition: all 0.5s;
+        }
+        #mobGnb .navWrap {
+          width: 100%;
+          height: 60%;
+          padding: 5% 0;
+        }
+        #mobGnb .navWrap li {
+          width: 100%;
+          padding: 15px 0;
+          text-indent: 10px;
+        }
+        #mobGnb .navWrap li a {
+          color: #fff;
+          font-size: 25px;
+          width: 100%;
+          display: block;
+          text-shadow: 2px 1px 0px rgba(0, 0, 0, 1);
+        }
+        #mobGnb .navWrap li ul li {
+          height: 30px;
+          line-height: 30px;
+          padding: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #mobGnb .navWrap li ul li a {
+          font-size: 16px;
+          text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+        #mobGnb .navWrap li ul:after {
+          display: block;
+          content: "";
+          clear: both;
+        }
+        .mobInfo {
+          width: 100%;
+          height: 25%;
+          padding-top: 15%;
+          text-align: center;
+          background-color: rgba(150, 150, 150, 1);
+          /*	position:absolute;
+						bottom:0;*/
+        }
+        .mobInfo li {
+          font-size: 20px;
+          display: inline-block;
+        }
+        .mobInfo li a {
+          color: #555;
+        }
+        .mobInfo li:first-child:after {
+          content: "|";
+          color: #ccc;
+        }
+
+        .mobileBT,
+        .mobileBT2 {
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          right: 15px;
+          top: 10px;
+          text-align: center;
+          line-height: 0.2;
+          overflow-y: hidden;
+          overflow-x: hidden;
+        }
+        .mobileBT span,
+        .mobileBT2 span {
+          font-size: 50px;
+          display: block;
+        }
+        .mobileBT span {
+          color: #eee;
+        }
+        .mobileBT img,
+        .mobileBT2 img {
+          width: 100%;
+          height: 100%;
+        }
+
+        /*		text-decoration:underline;*/
+        /*########## visualWrap ##########*/
+        #visualWrap {
+          width: 100%;
+          height: 150px;
+          margin-top: 0px;
+        }
+
+        #visual {
+          background-size: 100%;
+          height: 100%;
+          position: relative;
+        }
+
+        #visual .left_button {
+          display: none;
+        }
+        #visual .right_button {
+          display: none;
+        }
+        #visual .main_text {
+          width: 70px;
+          height: 35px;
+          left: 10%;
+          top: 1%;
+          font-size: 10px;
+          padding: 5%; /*line-height:35px;*/
+        }
+        #visual .main_text em {
+          font-size: 11px;
+        }
+        #visual .box2 {
+          display: none;
+        }
+        #visual .box3 {
+          width: 100%;
+          height: 30px;
+          font-size: 8px;
+          line-height: 30px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          font-weight: bold;
+          display: block;
+        }
+
+        /*########## section_item ##########*/
+        #section_item {
+          width: 100%;
+          height: 600px;
+          margin: 50px auto 0;
+        }
+        #section_item .titleBox {
+          width: 100%;
+          height: 30px;
+          padding: 0;
+          text-align: center;
+        }
+        #section_item .title {
+          width: 70%;
+          height: 100%;
+          font-size: 13px;
+        }
+        #section_item .title span {
+          font-size: 13px;
+          padding-left: 1%;
+        }
+        /*##### button #####*/
+        #section_item .buttonArea {
+          width: 100%;
+        }
+        #section_item ul {
+          width: 100%;
+          height: 100%;
+          float: left;
+        }
+        #section_item ul li {
+          width: 48%;
+          height: 40%;
+          padding: 1% 1% 3% 1%;
+        }
+        #section_item ul li p {
+          width: 100%;
+          height: 100%;
+        }
+        #section_item ul li p a {
+          display: block;
+          width: 80%;
+          margin: 0 auto;
+        }
+        #section_item ul li a img {
+          width: 100%;
+          height: 100%;
+        }
+        #section_item ul li p em {
+          width: 100%;
+          height: 35px;
+          font-size: 10px;
+          line-height: 15px;
+        }
+        #section_item .item_box span {
+          width: 100%;
+          font-size: 8px;
+          height: 13px;
+          line-height: 13px;
+          padding-left: 10%;
+        }
+        #section_item .buttonArea {
+          display: none;
+        }
+        /*	#section_item:after{content:""; display:block; clear:both;}*/
+
+        /*########## section_item ##########*/
+        /*########## section_life ##########*/
+        #section_life {
+          width: 100%;
+          height: 800px;
+          margin: 50px auto 0;
+        }
+        #section_life div {
+          float: none;
+          width: 100%;
+          height: 30%;
+          background-position: center;
+        }
+        /*	
+						#section_life div p{width:100%;height:100%;			
+							text-align:center;			
+							color:#fff;			
+							}
+						#section_life span{width:340px;height:30px;
+							margin-top:300px;
+							font-size:20px;
+							font-weight:bold;			
+							display:none;
+							}s
+						#section_life a{width:150px;height:50px;	
+							line-height:50px;		
+							color:#fff;float:left;
+							border:1px solid #fff;
+							margin:10px 10px;
+							display:none;
+							}
+						*/
+        #section_life h3 {
+          display: block;
+          text-align: left;
+          left: 0%;
+          top: -6px;
+        }
+
+        /*###########  technology #############*/
+        #section_tech {
+          margin: 0px auto 30px;
+          height: 190px;
+        }
+        #section_tech .technology {
+          width: 100%;
+          height: 100%;
+        }
+        #section_tech .text_button {
+          left: 4%;
+          top: 22%;
+          font-size: 15px;
+        }
+        #section_tech .text_button a {
+          width: 100px;
+          height: 20px;
+          line-height: 20px;
+          font-size: 11px;
+        }
+
+        /*##### camping lookbook #####*/
+        #section_lookbook {
+          width: 100%;
+          height: 155px;
+          margin: 0 auto 60px;
+          position: relative;
+          background-image: url("img/lookbook.jpg");
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+        #section_lookbook .lookbook_tit {
+          width: 100%;
+          height: 50px;
+          line-height: 4px;
+        }
+        #section_lookbook h3 {
+          width: 400px;
+          height: 30px;
+          top: -10px;
+          left: 53%;
+          font-size: 15px;
+        }
+        #section_lookbook .lookbook_text {
+          width: 100%;
+          height: 100%;
+          font-size: 12px;
+          left: 0px;
+          top: 15%;
+        }
+        #section_lookbook .lookbook_button {
+          width: 95px;
+          height: 20px;
+          line-height: 20px;
+          font-size: 14px;
+          margin: 5px auto 0;
+        }
+
+        /*########## section_event ##########*/
+        #section_event {
+          width: 100%;
+          overflow: hidden;
+          margin: 0 auto;
+        }
+        /*########## social  + .video_event ##########*/
+        .video_event {
+          width: 100%;
+        }
+        .video_event div {
+          width: 100%;
+          margin-right: 0;
+        }
+        .video_event .imgArea {
+          width: 100%;
+          height: 100%;
+        }
+        .video_event .imgArea .event_img {
+          width: 100%;
+        }
+        .video_event .imgArea .more {
+          width: 15%;
+        }
+        .video_event .imgArea .event_img a {
+          width: 100%;
+        }
+        .video_event .imgArea .more a {
+          width: 100%;
+        }
+        .video_event .imgArea .event_img a img {
+          width: 100%;
+        }
+        .video_event .more {
+          right: 0;
+          bottom: 0;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+        }
+
+        /*########## social ##########*/
+
+        #social .sns_icon {
+          width: 100%;
+          text-align: center;
+        }
+        #social {
+          width: 100%; /*height:858px;*/
+          height: 100%;
+          margin: 50px auto 50px;
+          overflow: hidden;
+        }
+        #social ul {
+          width: 279px;
+          height: 100%;
+          overflow: hidden;
+          margin: 0 auto;
+        }
+        #social ul li {
+          width: 122px;
+          padding: 2%;
+          float: left;
+          margin: 1px;
+        }
+        #social ul li a {
+          width: 100%;
+          height: 100%;
+          display: block;
+          text-align: center;
+        }
+        #social ul li a img {
+          width: 122px;
+          height: 122px;
+        }
+
+        /*########## footer ##########*/
+        #footer {
+          width: 100%;
+          overflow: hidden;
+          margin: 0px auto 0; /*border-top:2px solid #000;*/
+        }
+        #footer .footerline {
+          width: 100%;
+          margin: 0 auto;
+        }
+        #footer .footerline img {
+          width: 100%;
+          height: 5px;
+        }
+        #footer .footer_nav {
+          width: 100%;
+          height: 60px;
+          margin: 0 auto;
+        }
+        #footer .footer_n {
+          width: 100%;
+          height: 60%;
+        }
+        #footer .footer_n ul {
+          width: 100%;
+          height: 100%;
+          line-height: 25px;
+        }
+        #footer .footer_n ul li {
+          display: inline-block;
+          padding-right: 5%;
+          font-size: 12px;
+        }
+        #footer .tooter_sns {
+          width: 100%;
+          height: 55%;
+          display: none;
+        }
+        /*
+					#footer .tooter_sns ul{width:100%;height:45px;margin-top:0px;
+						text-align:center;
+						}
+					#footer .tooter_sns ul li{width:30px;display:inline-block;padding:0 15px;
+						}
+					#footer .tooter_sns ul li a{width:30px;height:30px; display:block;}
+					#footer .tooter_sns ul li a img{width:30px; height:30px;}
+					*/
+        #footer .footerArea {
+          width: 100%;
+        }
+        #footer .footer_family {
+          width: 100%;
+          text-align: center;
+        }
+        #footer .copy {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+    <script>
+      jQuery(document).ready(function () {
+        /*
+				모바일 네비에서 큰 제목 클릭하면
+				상세 네비가 슬라이드로 드러나도록 기능적용
+				대상: #mobGnb .navWrap li
+				이벤트: click
+				이벤트 핸들러: #mobGnb .navWrap li 에 클릭시 슬라이드 다운, 업으로 
+				상세 내용이(자녀의 자녀) 드러났다 사라졌다 표현하기.
+			*/
+        jQuery("#mobGnb .navWrap li ul li,mobileBT").hide();
+        // 기본적으로 모든 자녀들 감추기
+        jQuery("#mobGnb .navWrap li").click(function () {
+          jQuery(this).children().children().slideToggle();
+          jQuery(".mobInfo").show();
+        });
+
+        /*
+				버튼 클릭시 
+				모바일 네비가 드러나고 사라지기
+				대상: 임시버튼					
+				이벤트: click
+				이벤트 핸들러: 임시버튼 클릭시 mnav 드러나고 사라짐
+			*/
+        jQuery(".mobileBT2").click(function () {
+          jQuery("#mobGnb").css({ left: "0px" });
+          jQuery(this).fadeOut();
+          jQuery(".mobileBT").fadeIn();
+        });
+
+        jQuery(".mobileBT").click(function () {
+          jQuery("#mobGnb").css({ left: "-800px" });
+          jQuery(this).fadeOut();
+          jQuery(".mobileBT2").fadeIn();
+        });
+
+        jQuery("#visual ul").prepend(jQuery(".scene:last"));
+        jQuery("#visual ul").css({ marginLeft: "-1600px" });
+
+        jQuery("#visual .right_button").click(function () {
+          jQuery("#visual ul").animate(
+            { marginLeft: "-=1600px" },
+            500,
+            "swing",
+            function () {
+              jQuery("#visual ul").append(jQuery("#visual ul li:eq(0)"));
+              jQuery("#visual ul").css({ marginLeft: "-1600px" });
+            }
+          );
+        });
+
+        jQuery("#visual .left_button").click(function () {
+          jQuery("#visual ul").animate(
+            { marginLeft: "+=1600px" },
+            500,
+            "swing",
+            function () {
+              jQuery("#visual ul").prepend(jQuery("#visual ul li:last"));
+              jQuery("#visual ul").css({ marginLeft: "-1600px" });
+            }
+          );
+        });
+
+        /* 
+				headerWrap 에 호버하면 높이값이 증가하는 부분을
+				자녀의 li에 호버하면 높이값이 증가하게 바꾸려 시도중.	
+				
+				#product:hover #headerWrap{height:320px; transition:all 0.7s;}
+				.mobileBT,.mobileBT2{display:none;}
+
+			*/
+        /*	#headerWrap:hover{height:320px; transition:all 0.7s;}*/
+        /* nav에 호버시 해당 내용만큼 headerWrap의 높이값이 늘어남*/
+        jQuery(".product").hover(
+          function () {
+            /* product의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "320px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".lafuma,.lookbook").hover(
+          function () {
+            /* lafuma,lookbook의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "200px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".store").hover(
+          function () {
+            /* store의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "165px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        /*
+				section_life div에 hover시 해당 div가 옆으로 넓어지며 백그라운드
+				이미지의 남은 부분이 드러남
+			*/
+        jQuery(".content_live").hover(
+          function () {
+            jQuery(this).css({
+              width: "50%",
+              "z-index": "99",
+              transition: "all 0.5s",
+            });
+            jQuery(".content_live div P").css({
+              backgroundColor: "rgba(0,0,0,0.5)",
+            });
+            jQuery(".content_live h3").css({ top: "150px", left: "210px" });
+            jQuery(".content_live span,.content_live a").css({
+              display: "inline-block",
+            });
+          },
+          function () {
+            jQuery(this).css({
+              width: "35%",
+              "z-index": "0",
+              transition: "all 0.5s",
+            });
+            jQuery(".content_live div P").css({
+              backgroundColor: "rgba(0,0,0,0)",
+            });
+            jQuery(".content_live h3").css({ top: "250px", left: "150px" });
+            jQuery(".content_live span,.content_live a").css({
+              display: "none",
+            });
+          }
+        );
+
+        jQuery(".content_life").hover(
+          function () {
+            jQuery(this).css({
+              width: "50%",
+              "z-index": "99",
+              transition: "all 0.5s",
+            });
+            jQuery(".content_life div P").css({
+              backgroundColor: "rgba(0,0,0,0.5)",
+            });
+            jQuery(".content_life h3").css({ top: "150px", left: "210px" });
+            jQuery(".content_life span,.content_life a").css({
+              display: "inline-block",
+            });
+          },
+          function () {
+            jQuery(this).css({
+              width: "35%",
+              "z-index": "0",
+              transition: "all 0.5s",
+            });
+            jQuery(".content_life div P").css({
+              backgroundColor: "rgba(0,0,0,0)",
+            });
+            jQuery(".content_life h3").css({ top: "250px", left: "150px" });
+            jQuery(".content_life span,.content_life a").css({
+              display: "none",
+            });
+          }
+        );
+
+        jQuery(".voyage_style").hover(
+          function () {
+            jQuery(this).css({
+              width: "50%",
+              "z-index": "99",
+              transition: "all 0.5s",
+            });
+            jQuery(".voyage_style div P").css({
+              backgroundColor: "rgba(0,0,0,0.5)",
+            });
+            jQuery(".voyage_style h3").css({ top: "150px", left: "210px" });
+            jQuery(".voyage_style span,.voyage_style a").css({
+              display: "inline-block",
+            });
+          },
+          function () {
+            jQuery(this).css({
+              width: "35%",
+              "z-index": "0",
+              transition: "all 0.5s",
+            });
+            jQuery(".voyage_style div P").css({
+              backgroundColor: "rgba(0,0,0,0)",
+            });
+            jQuery(".voyage_style h3").css({ top: "250px", left: "150px" });
+            jQuery(".voyage_style span,.voyage_style a").css({
+              display: "none",
+            });
+          }
+        );
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="skipNav">
+      <p class="visual">
+        <a href="#visual" title="비주얼 영역">비주얼 영역 바로가기</a>
+      </p>
+      <p class="item">
+        <a href="#section_item" title="아이템 영역">아이템 영역 바로가기</a>
+      </p>
+      <p class="life">
+        <a href="#section_life" title="라이프 영역">라이프 영역 바로가기</a>
+      </p>
+      <p class="life">
+        <a href="#section_tech" title="테크놀로지 영역"
+          >테크놀로지 영역 바로가기</a
+        >
+      </p>
+      <p class="life">
+        <a href="#section_lookbook" title="룩북 영역">룩북 영역 바로가기</a>
+      </p>
+      <p class="life">
+        <a href="#section_event" title="이벤트 영역">이벤트 영역 바로가기</a>
+      </p>
+      <p class="life">
+        <a href="#social" title="소셜 영역">소셜 영역 바로가기</a>
+      </p>
+      <p class="life">
+        <a href="#footer" title="푸터 영역">푸터 영역 바로가기</a>
+      </p>
+    </div>
+    <div id="wrap">
+      <div id="headerWrap">
+        <div id="header">
+          <h1>
+            <a href="index.html" title="lafuma">
+              <img src="img/logo.png" alt="logo" />
+            </a>
+          </h1>
+          <ul class="infoMenu">
+            <li>
+              <a href="#" title="LOGIN"> LOGIN </a>
+            </li>
+            <li>
+              <a href="sub_join.html" title="JOIN"> JOIN </a>
+            </li>
+          </ul>
+          <div id="gnb">
+            <ul class="navWrap">
+              <li class="lafuma">
+                <a href="sub_about.html" title="LAFUMA"> LAFUMA </a>
+                <ul>
+                  <li>
+                    <a href="sub_about.html" title="ABOUT">ABOUT</a>
+                  </li>
+                  <li>
+                    <a href="sub_history.html" title="HISTORY">HISTORY</a>
+                  </li>
+                  <li>
+                    <a href="sub_press.html" title="PRESS">PRESS</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="lafuma_life.html" title="LAFUMA LIFE"> LAFUMA LIFE </a>
+              </li>
+              <li class="lookbook">
+                <a href="#" title="LOOKBOOK"> LOOKBOOK </a>
+                <ul>
+                  <li>
+                    <a href="#" title="APPAREL">APPAREL</a>
+                  </li>
+                  <li>
+                    <a href="#" title="CAMPING">CAMPING</a>
+                  </li>
+                  <li>
+                    <a href="#" title="VIDEO">VIDEO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="product">
+                <a href="#" title="PRODUCT"> PRODUCT </a>
+                <ul>
+                  <li><a href="product_man.html" title="MEN">MEN</a></li>
+                  <li><a href="#" title="WOMEN">WOMEN</a></li>
+                  <li><a href="#" title="FOOTWEAR">FOOTWEAR</a></li>
+                  <li><a href="#" title="PACK">PACK</a></li>
+                  <li><a href="#" title="ACCESSORIES">ACCESSORIES</a></li>
+                  <li><a href="#" title="CAMPING">CAMPING</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" title="TECHNOLOGY"> TECHNOLOGY </a>
+              </li>
+              <li class="store">
+                <a href="#" title="STORE"> STORE </a>
+                <ul>
+                  <li><a href="#" title="매장찾기">매장찾기</a></li>
+                  <li><a href="#" title="매장개설안내">매장개설안내</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p class="lfmallImg">
+              <a href="index.html" title="lafuma 패션몰">
+                <img src="img/p_mall.png" alt="lf_mall" />
+              </a>
+            </p>
+          </div>
+
+          <div id="mobGnb">
+            <p class="mobileBT">
+              <!--
+						<img src="img/icon/mobNav.png" alt="모바일네비"/>
+					-->
+              <span>─</span>
+              <span>─</span>
+              <span>─</span>
+            </p>
+            <ul class="navWrap">
+              <li>
+                <a href="#none" title="LAFUMA"> LAFUMA </a>
+                <ul>
+                  <li>
+                    <a href="sub_about.html" title="ABOUT">ABOUT</a>
+                  </li>
+                  <li>
+                    <a href="sub_history.html" title="HISTORY">HISTORY</a>
+                  </li>
+                  <li>
+                    <a href="sub_press.html" title="PRESS">PRESS</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" title="LAFUMA LIFE"> LAFUMA LIFE </a>
+              </li>
+              <li>
+                <a href="#" title="LOOKBOOK"> LOOKBOOK </a>
+                <ul>
+                  <li>
+                    <a href="#" title="APPAREL">APPAREL</a>
+                  </li>
+                  <li>
+                    <a href="#" title="CAMPING">CAMPING</a>
+                  </li>
+                  <li>
+                    <a href="#" title="VIDEO">VIDEO</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" title="PRODUCT"> PRODUCT </a>
+                <ul>
+                  <li><a href="product_man.html" title="MEN">MEN</a></li>
+                  <li><a href="#" title="WOMEN">WOMEN</a></li>
+                  <li><a href="#" title="FOOTWEAR">FOOTWEAR</a></li>
+                  <li><a href="#" title="PACK">PACK</a></li>
+                  <li><a href="#" title="ACCESSORIES">ACCESSORIES</a></li>
+                  <li><a href="#" title="CAMPING">CAMPING</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" title="TECHNOLOGY"> TECHNOLOGY </a>
+              </li>
+              <li>
+                <a href="#" title="STORE"> STORE </a>
+                <ul>
+                  <li><a href="#" title="매장찾기">매장찾기</a></li>
+                  <li><a href="#" title="매장개설안내">매장개설안내</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="mobInfo">
+              <li>
+                <a href="#" title="LOGIN"> LOGIN </a>
+              </li>
+              <li>
+                <a href="sub_join.html" title="JOIN"> JOIN </a>
+              </li>
+            </ul>
+          </div>
+          <p class="mobileBT2">
+            <!--	<img src="img/icon/mobNav.png" alt="모바일네비"/>-->
+            <span>─</span>
+            <span>─</span>
+            <span>─</span>
+          </p>
+        </div>
+      </div>
+      <section id="container"></section>
+      <div id="footer">
+        <p class="footerline">
+          <img src="img/footerline.jpg" alt="footerline" />
+        </p>
+        <div class="footer_nav">
+          <div class="footer_n">
+            <ul>
+              <li><a href="#" title="제품">제품</a></li>
+              <li><a href="#" title="LFmall">LFmall</a></li>
+              <li><a href="#" title="새 소식">새 소식</a></li>
+              <li><a href="#" title="매장 안내">매장 안내</a></li>
+              <li>
+                <a href="#" title="매장개설안내"
+                  ><span class="color_gray">매장개설안내</span></a
+                >
+              </li>
+              <li>
+                <a href="#" title="고객센터"
+                  ><span class="color_gray">고객센터</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="tooter_sns">
+            <ul>
+              <li>
+                <a href="#" title="페이스북"
+                  ><img src="img/icon/facebook.png" alt="페이스북"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="인스타그램"
+                  ><img src="img/icon/instagram.png" alt="인스타그램"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="블로그"
+                  ><img src="img/icon/blog.png" alt="블로그"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerArea">
+          <div class="footer_family">
+            <p class="footer_family_a">
+              <a href="http://www.lafumakorea./co.kr" title="lafuma">
+                <img src="img/family0.png" alt="lafuma" />
+              </a>
+            </p>
+            <p class="footer_family_a">
+              <a href="https://www.lafuma.com/fr/" title="lafuma_fr">
+                <img src="img/family1.png" alt="lafuma_fr" />
+              </a>
+            </p>
+            <div class="family_site">
+              <p>
+                <button>FAMILY SITE<span>▼</span></button>
+              </p>
+              <ul>
+                <li>
+                  <a href="http://www.lfcorp.com/" title="LFCORP"> LFCORP </a>
+                </li>
+                <li>
+                  <a href="http://www.daks.co.kr/" title="DAKS"> DAKS </a>
+                </li>
+                <li>
+                  <a href="http://www.tngt.co.kr/index" title="TNGT"> TNGT </a>
+                </li>
+                <li>
+                  <a href="http://www.hazzys.com/" title="HAZZYS"> HAZZYS </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.jillstuart.co.kr/#page-top"
+                    title="JILLSTUART"
+                  >
+                    JILLSTUART
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.maestro.co.kr/" title="MAESTRO">
+                    MAESTRO
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.bluelounge.co.kr/" title="BLUE LOUNGE">
+                    BLUE LOUNGE
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.a-t-corner.com/" title="A.T.CORNER">
+                    A.T.CORNER
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html" title="LFmall"> LFmall </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="copy">
+            <p>copyright (c) 2019 hera_shin all rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

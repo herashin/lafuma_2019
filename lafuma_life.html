@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>HISTORY</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/header.js"></script>
+    <style>
+      /*########## wrap ##########*/
+      #wrap {
+        min-width: 1600px;
+        max-width: 1920px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      /*########## headerWrap ##########*/
+      #headerWrap {
+        width: 100%;
+        height: 115px;
+        margin: 0 auto;
+        border-bottom: 1px solid #ddd;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      #header {
+        width: 1600px;
+        margin: 0 auto;
+        position: relative;
+      }
+      /*##### headerWrap + h1 #####*/
+      #header h1 {
+        width: 174px;
+        height: 45px;
+        position: absolute;
+        left: 100px;
+        top: 30px;
+      }
+      /*##### headerWrap + infoMenu #####*/
+      .infoMenu {
+        width: 1590px;
+        text-align: right;
+        padding-right: 10px;
+      }
+      .infoMenu li {
+        display: inline;
+        font-size: 0.8em;
+      }
+
+      .infoMenu li a {
+        padding: 0 10px;
+        color: #000;
+      }
+      /*##### gnb #####*/
+      #gnb {
+        width: 1094px;
+        height: 98px;
+        margin-left: 250px;
+        font-weight: bold;
+        text-align: center;
+      }
+      #gnb .navWrap {
+        height: 48px;
+        line-height: 38px;
+        padding: 30px 0 20px 0;
+      }
+      #gnb .navWrap li {
+        width: 180px;
+        height: 39px;
+        float: left;
+        text-align: center;
+      }
+      #gnb .navWrap li ul {
+        display: none;
+      }
+      #gnb img {
+        position: absolute;
+        left: 1495px;
+        top: 50px;
+      }
+      /*##### 기능 #####*/
+      #gnb ul li:hover {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb .navWrap:hover ul li {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb ul li:hover ul,
+      #gnb ul li:focus ul {
+        display: block;
+      }
+
+      /*########## container + title ##########*/
+      #container {
+        width: 100%;
+        margin: 115px auto 50px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #title {
+        width: 100%;
+        height: 185px;
+        margin: 0 auto;
+        margin: 0 auto;
+        text-indent: 80px;
+      }
+      #title h2 {
+        width: 1600px;
+        font-size: 50px;
+        margin: 0 auto;
+        transition: 0.8s ease;
+      }
+      #title:hover h2 {
+        color: #e04307;
+        transition: 0.8s ease;
+      }
+      #title .history {
+        width: 100%;
+        height: 115px;
+        margin: 0 auto;
+      }
+      #title .history p {
+        width: 1600px;
+        font-size: 20px;
+        color: #52585c;
+        font-weight: bold;
+        text-indent: 80px;
+        margin: 50px auto 0;
+        opacity: 0;
+        transition: all 1s ease 0.2s;
+      }
+
+      #title:hover .history p {
+        opacity: 1;
+        margin-top: 0;
+      }
+
+      #page {
+        width: 100%;
+        height: 50px;
+        margin: 0 auto;
+      }
+      #page ul {
+        width: 970px;
+        margin: 0 auto;
+        border-top: 2px solid #000;
+        padding-top: 10px;
+      }
+      #page ul li {
+        display: inline;
+        padding: 0 10px;
+        font-weight: bold;
+      }
+
+      /*########## container + section1 ##########*/
+
+      #section1 {
+        width: 1600px;
+        margin: 50px auto; /* overflow:hidden;*/
+      }
+      #section1 h2 {
+        position: absolute;
+        left: -9999px;
+        font-size: 1px;
+        line-height: 0px;
+        line-height: 0px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .main {
+        width: 1160px;
+        margin: 0 auto;
+        position: relative;
+      }
+      #section1 .text1 {
+        position: absolute;
+        left: 0px;
+        top: 0;
+        width: 62%;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        font-size: 25px;
+        padding: 0 19%;
+      }
+      #section1 .text1 span {
+        width: 20px;
+        display: block;
+        margin: 0 auto;
+        float: left;
+        color: #fff;
+        padding: 0 18px;
+        font-size: 40px;
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+      /*########## 메인 텍스트 에니메이션 ##########*/
+      #section1 .text1 .v {
+        animation: textbox 1.5s;
+      }
+      #section1 .text1 .o {
+        animation: textbox 2s;
+      }
+      #section1 .text1 .y {
+        animation: textbox 2.5s;
+      }
+      #section1 .text1 .a {
+        animation: textbox 3s;
+      }
+      #section1 .text1 .g {
+        animation: textbox 3.5s;
+      }
+      #section1 .text1 .e {
+        animation: textbox 4s;
+      }
+      #section1 .text1 .s {
+        animation: textbox 4.5s;
+      }
+      #section1 .text1 .t {
+        animation: textbox 5s;
+      }
+      #section1 .text1 .y2 {
+        animation: textbox 5.5s;
+      }
+      #section1 .text1 .l {
+        animation: textbox 6s;
+      }
+      #section1 .text1 .e2 {
+        animation: textbox 6.5s;
+      }
+      #section1 .text1 .space {
+        margin-right: 40px;
+      }
+
+      @keyframes textbox {
+        0% {
+          padding-top: 20px;
+        }
+        50% {
+          padding-top: 100px;
+        }
+        80% {
+          padding-top: 20px;
+        }
+        100% {
+          padding-top: 0;
+        }
+      }
+      /*###########################################*/
+      .text2 {
+        position: absolute;
+        right: 0px;
+        bottom: -5px;
+        background-color: #eadbb9;
+        font-weight: bold;
+      }
+
+      /*########## container + section2 ##########*/
+      #section2 {
+        width: 100%;
+        margin: 0 auto;
+      }
+      /*########## nav_life ##########*/
+      #nav_life {
+        width: 100%;
+        margin: 0 auto;
+        height: 50px;
+      }
+      #nav_life dl {
+        width: 50%;
+        margin: 0 auto;
+
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #nav_life dt {
+        float: left;
+        width: 20%;
+      }
+      #nav_life dt:after {
+        content: "──";
+        margin-left: 20px;
+      }
+      #nav_life dd {
+        float: left;
+        width: 25%;
+        text-align: center;
+      }
+      #nav_life:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      /*##############################*/
+      /*########## content ##########*/
+      #content {
+        width: 100%;
+        margin: 0 auto;
+      }
+      #content ul {
+        width: 1250px;
+        margin: 0 auto;
+      }
+      #content ul li {
+        width: 400px;
+        height: 380px;
+        margin: 8px;
+        float: left;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+      #content ul li a {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        opacity: 0.3;
+      }
+      #content ul li a img {
+        width: 100%;
+      }
+      #content ul li a em {
+        font-style: normal;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+      }
+      #content ul li a p {
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        line-height: 60px;
+        font-weight: bold;
+      }
+      #content ul li a span {
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+      }
+      /*########## content 기능 구간##########*/
+      /*	#content .contentBox2{display:none;}*/
+
+      /*########## footer ##########*/
+      #footer {
+        width: 100%;
+        overflow: hidden;
+        /*position:absolute; bottom:0;left:0;*/
+        margin: 50px auto 0;
+      }
+      #footer .footerline {
+        width: 1600px;
+        margin: 0 auto;
+      }
+      #footer .footer_nav {
+        width: 1310px;
+        height: 60px;
+        margin: 0 auto;
+      }
+      #footer .footer_n {
+        width: 786px;
+        height: 100%;
+        float: left;
+      }
+      #footer .footer_n ul {
+        width: 786px;
+        height: 100%;
+        line-height: 60px;
+      }
+      #footer .footer_n ul li {
+        display: inline;
+        padding-right: 30px;
+        font-size: 14px;
+      }
+      #footer .footer_n .color_gray {
+        color: #8f8f8e;
+      }
+      #footer .tooter_sns {
+        width: 524px;
+        height: 100%;
+        float: left;
+      }
+      #footer .tooter_sns ul {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        text-align: right;
+      }
+      #footer .tooter_sns ul li {
+        width: 30px;
+        display: inline;
+        padding: 0 15px;
+      }
+      #footer .tooter_sns ul li a {
+        width: 30px;
+        height: 30px;
+      }
+      #footer .tooter_sns ul li a img {
+        width: 30px;
+        height: 30px;
+      }
+      #footer .footerArea {
+        width: 1310px;
+        height: 50px;
+        margin: 0 auto;
+      }
+      #footer .footer_family {
+        width: 786px;
+        height: 100%;
+        float: left;
+      }
+      #footer .footer_family_a {
+        width: 150px;
+        display: block;
+        float: left;
+      }
+      #footer .family_site {
+        width: 150px;
+        float: left;
+      }
+      #footer .family_site button {
+        border: 1px solid #fff;
+        background-color: #fff;
+      }
+      #footer .family_site ul {
+        width: 200px;
+        height: 100px;
+        display: none;
+        background-color: #666;
+        overflow: auto;
+      }
+      #footer .family_site ul li {
+        padding: 5px 0;
+      }
+      #footer .family_site ul li a {
+        color: #aaa;
+      }
+      #footer .family_site:hover ul {
+        display: block;
+      }
+      /*  기능 */
+      #footer .copy {
+        width: 40%;
+        height: 100%;
+        float: left;
+        text-align: right;
+        color: #ccc;
+      }
+    </style>
+    <script>
+      jQuery(document).ready(function () {
+        jQuery(".product").hover(
+          function () {
+            /* product의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "320px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".lafuma,.lookbook").hover(
+          function () {
+            /* lafuma,lookbook의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "200px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".store").hover(
+          function () {
+            /* store의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "165px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+        jQuery("#headerWrap").css({ transition: "all 0.3s" });
+
+        jQuery("#content ul:not(:first)").hide();
+        /*
+				#content ul li에 호버적용
+				li에 마우스 올리면  
+				//		모든 a 태그에 오파시티 정상화
+				//		모든 spna태그 배경 정상화
+				//		li태그에는 직접 올려야 배경 불투명 사라짐 
+
+				대상: ul li
+				이벤트: hover (css)
+				이벤트 핸들러:
+					li태그 호버시 모든 li의 a태그 span태그 이벤트 적용
+					a태그 호버시 opacity 정상
+					span태그 호버시 background-color:rgba(0,0,0,0)
+					li스스로는 직접 호버를 실행해야 background-color:rgba(0,0,0,0) 적용li배경 불투명 사라짐
+			*/
+
+        jQuery(".contentLi").hover(
+          function () {
+            $(this).css({
+              backgroundColor: "rgba(0,0,0,0)",
+              transition: "all 0.3s",
+            });
+            $(".contentLi a").css({ opacity: "1", transition: "all 0.3s" });
+            $(".contentLi span").css({
+              backgroundColor: "rgba(0,0,0,0)",
+              transition: "all 0.3s",
+            });
+          },
+          function () {
+            $(".contentLi").css({
+              backgroundColor: "rgba(0,0,0,0.7)",
+              transition: "all 2s",
+            });
+            $(".contentLi a").css({ opacity: "0.3", transition: "all 2s" });
+            $(".contentLi span").css({
+              backgroundColor: "rgba(0,0,0,0.6)",
+              transition: "all 2s",
+            });
+          }
+        );
+        /*
+				첫번째 ul contentBox1 에서 nav 메뉴 REFRESH LIVE를 클릭하면
+				contentBox1는 사라지고 contentBox2가 나타나게 한다.
+				대상: nav 메뉴의 REFRESH LIVE
+				이벤트:click 
+				이벤트 핸들러:REFRESH LIVE 클릭시 contentBox1 숨김 contentBox2 보임
+			*/
+        jQuery("#nav_life dl dd:eq(0)").bind("click focusin", function () {
+          jQuery(".contentBox1, .contentBox3, .contentBox4").hide();
+          jQuery(".contentBox2").show();
+        });
+
+        jQuery("#nav_life dl dd:eq(1)").bind("click focusin", function () {
+          jQuery(".contentBox1 , .contentBox2, .contentBox4").hide();
+          jQuery(".contentBox3").show();
+        });
+
+        jQuery("#nav_life dl dd:eq(2)").bind("click focusin", function () {
+          jQuery(".contentBox1 , .contentBox2, .contentBox3").hide();
+          jQuery(".contentBox4").show();
+        });
+
+        /*동일한 기능  제목 영역 (dt)*/
+        jQuery("#nav_life dl dt").bind("click focusin", function () {
+          jQuery(".contentBox2").hide();
+          jQuery(".contentBox1").show();
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div id="headerWrap">
+        <div id="header">
+          <h1>
+            <a href="index.html" title="lafuma">
+              <img src="img/logo.png" alt="logo" />
+            </a>
+          </h1>
+          <ul class="infoMenu">
+            <li>
+              <a href="logIn.html" title="LOGIN"> LOGIN </a>
+            </li>
+            <li>
+              <a href="sub_join.html" title="JOIN"> JOIN </a>
+            </li>
+          </ul>
+          <div id="gnb">
+            <ul class="navWrap">
+              <li class="lafuma">
+                <a href="sub_about.html" title="LAFUMA"> LAFUMA </a>
+                <ul>
+                  <li>
+                    <a href="sub_about.html" title="ABOUT">ABOUT</a>
+                  </li>
+                  <li>
+                    <a href="sub_history.html" title="HISTORY">HISTORY</a>
+                  </li>
+                  <li>
+                    <a href="sub_press.html" title="PRESS">PRESS</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="lafuma_life.html" title="LAFUMA LIFE"> LAFUMA LIFE </a>
+              </li>
+              <li class="lookbook">
+                <a href="#none" title="LOOKBOOK"> LOOKBOOK </a>
+                <ul>
+                  <li>
+                    <a href="#none" title="APPAREL">APPAREL</a>
+                  </li>
+                  <li>
+                    <a href="#none" title="CAMPING">CAMPING</a>
+                  </li>
+                  <li>
+                    <a href="#none" title="VIDEO">VIDEO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="product">
+                <a href="#none" title="PRODUCT"> PRODUCT </a>
+                <ul>
+                  <li><a href="product_man.html" title="MEN">MEN</a></li>
+                  <li><a href="#none" title="WOMEN">WOMEN</a></li>
+                  <li><a href="#none" title="FOOTWEAR">FOOTWEAR</a></li>
+                  <li><a href="#none" title="PACK">PACK</a></li>
+                  <li><a href="#none" title="ACCESSORIES">ACCESSORIES</a></li>
+                  <li><a href="#none" title="CAMPING">CAMPING</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="tech.html" title="TECHNOLOGY"> TECHNOLOGY </a>
+              </li>
+              <li class="store">
+                <a href="#none" title="STORE"> STORE </a>
+                <ul>
+                  <li><a href="#none" title="매장찾기">매장찾기</a></li>
+                  <li><a href="#none" title="매장개설안내">매장개설안내</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              <a href="index.html" title="lafuma 패션몰">
+                <img src="img/p_mall.png" alt="lf_mall" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="container">
+        <div id="title">
+          <div class="history">
+            <h2>LAFUMA LIFE</h2>
+            <p>일상을 Refresh 하는 모든 순간을 LAFUMA와 함께하세요</p>
+          </div>
+        </div>
+        <section id="section1">
+          <h2>life_main</h2>
+          <div class="main">
+            <p>
+              <img src="img/lafuma_life/main.jpg" alt="mainImg" />
+            </p>
+            <p class="text1">
+              <span class="v">V</span>
+              <span class="o">O</span>
+              <span class="y">Y</span>
+              <span class="a">A</span>
+              <span class="g">G</span>
+              <span class="e space">E</span>
+              <span class="s">S</span>
+              <span class="t">T</span>
+              <span class="y2">Y</span>
+              <span class="l">L</span>
+              <span class="e2">E</span>
+            </p>
+
+            <p class="text2">
+              <span>ENERGETIC TRAVEL @MADIVES</span>
+            </p>
+          </div>
+        </section>
+        <section id="section2">
+          <nav id="nav_life">
+            <dl>
+              <dt><a href="#none" title="all">ALL</a></dt>
+              <dd><a href="#none" title="REFRESH LIVE">REFRESH LIVE</a></dd>
+              <dd><a href="#none" title="URBAN LIFE">URBAN LIFE</a></dd>
+              <dd><a href="#none" title="URBAN LIFE">VOYAGE STYLE</a></dd>
+            </dl>
+          </nav>
+
+          <div id="content">
+            <ul class="contentBox1">
+              <li class="contentLi">
+                <a href="#none" title="걷는 도시 서울">
+                  <img
+                    src="img/lafuma_life/life_refresh0.jpg"
+                    alt="걷는 도시 서울"
+                  />
+                  <em>REFRESH LIVE</em>
+                  <p>걷는 도시 서울 with LAFUMA CAMPING ZONE</p>
+                  <span
+                    >이번 일요일엔 차 없는 캠핑을 떠나보는 게 어떻까? 매주
+                    일요일, 광화문에서 특별한 행사가 진행된다. 드넒은 세종대로가
+                    차 없는 거리로 변신하</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="뉴트로 감성의 성지">
+                  <img
+                    src="img/lafuma_life/life_refresh1.jpg"
+                    alt="뉴트로 감성의 성지"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>뉴트로 감성의 성지 - VINYL & PLASTIC + SOUNDS GOOD</p>
+                  <span
+                    >뉴트로(NEWTRO)’가 새로운 트렌드로 떠오른다. ‘새로운
+                    레트로(Retro. 복고풍)’라는 의미의 뉴트로는, 오래된 스타일의
+                    인테리어를 한</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="SPRING in TOKYO">
+                  <img
+                    src="img/lafuma_life/life_refresh2.jpg"
+                    alt="SPRING in TOKYO"
+                  />
+                  <em>VOYAGE STYLE</em>
+                  <p>SPRING in TOKYO</p>
+                  <span
+                    >평소와는 조금 다른 봄날의 여행을 계획 중이라면, 도쿄를
+                    추천한다. 2박 3일 정도의 짧은 일정으로도 감성 가득한 스폿
+                    곳곳을 누빌 수 있고,</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="SEONGSU YEONBANG">
+                  <img
+                    src="img/lafuma_life/life_refresh3.png"
+                    alt="SEONGSU YEONBANG"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>SEONGSU YEONBANG</p>
+                  <span
+                    >요새 주목받는 공간들은 대중적인 인기 보다 마니아적인 소소한
+                    취향을 공략한다. 최근 문을 연 ‘성수연방'도 그런 곳이다.
+                    자신만의 취향을 드러낼</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="BETTER FOR CAMPING">
+                  <img
+                    src="img/lafuma_life/life_refresh4.jpg"
+                    alt="BETTER FOR CAMPING"
+                  />
+                  <em>REFRESH LIVE</em>
+                  <p>BETTER FOR CAMPING</p>
+                  <span
+                    >올해는 좀 더 준비된 캠퍼가 되어 보는 건 어떨까? 일상을
+                    벗어난 장소에서는 소소한 도구들도 의외로 큰 힘을 발휘한다.
+                    평일 오후의 가벼운 피크</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="MMCA CHEONGJU">
+                  <img
+                    src="img/lafuma_life/life_refresh5.jpg"
+                    alt="MMCA CHEONGJU"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>WHERE TO GO THIS WEEKEND - MMCA CHEONGJU</p>
+                  <span
+                    >미술은 이제 일상에 한발 더 가까워진 느낌이다.
+                    국립현대미술관 서울관이나 덕수궁관 같은 국가 운영의
+                    미술관뿐만 아니라 청담동, 인사동, 대학로</span
+                  >
+                </a>
+              </li>
+            </ul>
+            <ul class="contentBox2">
+              <li class="contentLi">
+                <a href="#none" title="걷는 도시 서울">
+                  <img
+                    src="img/lafuma_life/life_refresh0.jpg"
+                    alt="걷는 도시 서울"
+                  />
+                  <em>REFRESH LIVE</em>
+                  <p>걷는 도시 서울 with LAFUMA CAMPING ZONE</p>
+                  <span
+                    >이번 일요일엔 차 없는 캠핑을 떠나보는 게 어떻까? 매주
+                    일요일, 광화문에서 특별한 행사가 진행된다. 드넒은 세종대로가
+                    차 없는 거리로 변신하</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="BETTER FOR CAMPING">
+                  <img
+                    src="img/lafuma_life/life_refresh4.jpg"
+                    alt="BETTER FOR CAMPING"
+                  />
+                  <em>REFRESH LIVE</em>
+                  <p>BETTER FOR CAMPING</p>
+                  <span
+                    >올해는 좀 더 준비된 캠퍼가 되어 보는 건 어떨까? 일상을
+                    벗어난 장소에서는 소소한 도구들도 의외로 큰 힘을 발휘한다.
+                    평일 오후의 가벼운 피크</span
+                  >
+                </a>
+              </li>
+
+              <li class="contentLi">
+                <a href="#none" title="올가을,백패커를 위한 안내서">
+                  <img
+                    src="img/lafuma_life/life_refresh6.jpg"
+                    alt="올가을,백패커를 위한 안내서"
+                  />
+                  <em>REFRESH LIVE</em>
+                  <p>올가을,백패커를 위한 안내서</p>
+                  <span
+                    >가을의 시작과 함께 당신을 자극하는 자연의 부름을 느꼈다면,
+                    지금 당장 떠날 채비를 하라. 여행에서 가장 중요한 백팩, 어떤
+                    걸 골라야 할지</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="STYLISH CAMPING, GO OUT CAMP 2018">
+                  <img
+                    src="img/lafuma_life/life_refresh7.jpg"
+                    alt="STYLISH CAMPING, GO OUT CAMP 2018"
+                  />
+                  <em>REFRESH LIVE</em>
+                  <p>STYLISH CAMPING, GO OUT CAMP 2018</p>
+                  <span>
+                    캠핑 무드가 한창인 요즘, 아웃도어 컬처 매거진 이 매년
+                    주최하는 캠핑 이벤트 ‘고 아웃 캠프 2018’을 소개한다. 고 아웃
+                    캠프는 연인, 친
+                  </span>
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="BETTER TO GO OUTSIDE - 차 없는 거리">
+                  <img
+                    src="img/lafuma_life/life_refresh8.jpg"
+                    alt="BETTER TO GO OUTSIDE - 차 없는 거리"
+                  />
+                  <em>REFRESH LIVE</em>
+                  <p>BETTER TO GO OUTSIDE - 차 없는 거리</p>
+                  <span>
+                    세계적인 쇼핑거리로 손꼽히는 긴자의 중앙 도로는 주말 12시가
+                    되면 앤틱한 종소리가 울리며 모든 차량이 통제되고, 도로는
+                    보행자의 천국으로 변한
+                  </span>
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="BETTER TO GO OUTSIDE - BACKPACK">
+                  <img
+                    src="img/lafuma_life/life_refresh9.jpg"
+                    alt="BETTER TO GO OUTSIDE - BACKPACK"
+                  />
+                  <em>REFRESH LIVE</em>
+                  <p>BETTER TO GO OUTSIDE - BACKPACK</p>
+                  <span>
+                    가벼운 등산이나 하이킹, 오랜만에 마음먹은 라이딩을 위해 가장
+                    먼저 갖춰야 할 것으로 더 나은 활동을 돕기 위한 잘 만든
+                    백팩을 꼽는다. 들고
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <ul class="contentBox3">
+              <li class="contentLi">
+                <a href="#none" title="뉴트로 감성의 성지">
+                  <img
+                    src="img/lafuma_life/life_refresh1.jpg"
+                    alt="뉴트로 감성의 성지"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>뉴트로 감성의 성지 - VINYL & PLASTIC + SOUNDS GOOD</p>
+                  <span
+                    >뉴트로(NEWTRO)’가 새로운 트렌드로 떠오른다. ‘새로운
+                    레트로(Retro. 복고풍)’라는 의미의 뉴트로는, 오래된 스타일의
+                    인테리어를 한</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="SEONGSU YEONBANG">
+                  <img
+                    src="img/lafuma_life/life_refresh3.png"
+                    alt="SEONGSU YEONBANG"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>SEONGSU YEONBANG</p>
+                  <span
+                    >요새 주목받는 공간들은 대중적인 인기 보다 마니아적인 소소한
+                    취향을 공략한다. 최근 문을 연 ‘성수연방'도 그런 곳이다.
+                    자신만의 취향을 드러낼</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="MMCA CHEONGJU">
+                  <img
+                    src="img/lafuma_life/life_refresh5.jpg"
+                    alt="MMCA CHEONGJU"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>WHERE TO GO THIS WEEKEND - MMCA CHEONGJU</p>
+                  <span
+                    >미술은 이제 일상에 한발 더 가까워진 느낌이다.
+                    국립현대미술관 서울관이나 덕수궁관 같은 국가 운영의
+                    미술관뿐만 아니라 청담동, 인사동, 대학로</span
+                  >
+                </a>
+              </li>
+              <li class="contentLi">
+                <a
+                  href="#none"
+                  title="과거와 현재가 공존하는 아름다움 - 덕수궁 "
+                >
+                  <img
+                    src="img/lafuma_life/life_refresh10.jpg"
+                    alt="과거와 현재가 공존하는 아름다움 - 덕수궁"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>과거와 현재가 공존하는 아름다움 - 덕수궁</p>
+                  <span>
+                    외국인들이 서울을 찾았을 때 인상 깊었던 경험 중 하나로,
+                    서울의 고궁을 꼽는다 한다. 이번 주말은 도심 속에서 잊고
+                    있었던 고궁, 덕수궁의
+                  </span>
+                </a>
+              </li>
+              <li class="contentLi">
+                <a
+                  href="#none"
+                  title="ROMANTIC HOLIDAY in CULTURE STATION SEOUL 284"
+                >
+                  <img
+                    src="img/lafuma_life/life_refresh11.jpg"
+                    alt="ROMANTIC HOLIDAY in CULTURE STATION SEOUL 284"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>ROMANTIC HOLIDAY in CULTURE STATION SEOUL 284</p>
+                  <span>
+                    새해를 맞이한 겨울, 좀 더 특별한 데이트 장소를 찾고 있다면
+                    서울역을 추천한다. 이번엔 여행 전 설렘을 안고 찾는 서울역이
+                    아닌, 구 역사에서
+                  </span>
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="CULTURAL SPACES in HANNAM & SAMCHUNG">
+                  <img
+                    src="img/lafuma_life/life_refresh12.jpg"
+                    alt="CULTURAL SPACES in HANNAM & SAMCHUNG"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>CULTURAL SPACES in HANNAM & SAMCHUNG</p>
+                  <span>
+                    남들과 다른 특별한 문화 공간을 갈망하고 있다면, 이번 주말엔
+                    한남동과 삼청동을 찾아보는 건 어떨까? 책과 예술, 그리고 멋진
+                    공간이 어우러진
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <ul class="contentBox4">
+              <li class="contentLi">
+                <a href="#none" title="ENERGETIC TRAVEL @MADIVES">
+                  <img
+                    src="img/lafuma_life/main.jpg"
+                    alt="ENERGETIC TRAVEL @MADIVES"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>ENERGETIC TRAVEL @MADIVES</p>
+                  <span>
+                    신혼여행지로 가장 선호 받는 나라 몰디브, 여느 커플처럼
+                    리조트에서의 휴식만을 계획하고 있다면, 이번엔 여행 테마를
+                    바꿔보는 건 어떨까? 몰디브
+                  </span>
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="SPRING in TOKYO">
+                  <img
+                    src="img/lafuma_life/life_refresh2.jpg"
+                    alt="SPRING in TOKYO"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>SPRING in TOKYO</p>
+                  <span>
+                    평소와는 조금 다른 봄날의 여행을 계획 중이라면, 도쿄를
+                    추천한다. 2박 3일 정도의 짧은 일정으로도 감성 가득한 스폿
+                    곳곳을 누빌 수 있고,
+                  </span>
+                </a>
+              </li>
+              <li class="contentLi">
+                <a
+                  href="#none"
+                  title="미리 만나는 겨울 아우터 in 융프라우 n 샤모니"
+                >
+                  <img
+                    src="img/lafuma_life/life_refresh13.jpg"
+                    alt="미리 만나는 겨울 아우터 in 융프라우 n 샤모니"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>미리 만나는 겨울 아우터 in 융프라우 &amp; 샤모니</p>
+                  <span>
+                    아침저녁으로 쌀쌀한 기운이 감도는 요즘, 단풍과 눈꽃으로
+                    이어지는 가을 겨울 여행이 간절해진다. 이맘때 단연 최고의
+                    여행지로 손꼽히는 스위스
+                  </span>
+                </a>
+              </li>
+              <li class="contentLi">
+                <a
+                  href="#none"
+                  title="가을의 초입, 최고의 여행지 KYOTO with SWEATSHIRTS n ACC"
+                >
+                  <img
+                    src="img/lafuma_life/life_refresh14.jpg"
+                    alt="가을의 초입, 최고의 여행지 KYOTO with SWEATSHIRTS n ACC"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>
+                    가을의 초입, 최고의 여행지 KYOTO with SWEATSHIRTS &amp; ACC
+                  </p>
+                  <span>
+                    여러 번 일본 여행 경험이 많은 이들이 앞다투어 추천하는
+                    여행지가 있다. 오랜 전통과 일본 특유의 매력, 그리고 여행의
+                    빼놓을 수 없는 즐길
+                  </span>
+                </a>
+              </li>
+              <li class="contentLi">
+                <a
+                  href="#none"
+                  title="휴가를 위한 준비의 시작 - SUMMER VACANCE ITEM"
+                >
+                  <img
+                    src="img/lafuma_life/life_refresh15.jpg"
+                    alt="휴가를 위한 준비의 시작 - SUMMER VACANCE ITEM"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>휴가를 위한 준비의 시작 - SUMMER VACANCE ITEM</p>
+                  <span>
+                    본격적인 휴가 시즌을 앞둔 요즘, 여행 스케줄을 짜는 시간은 일
+                    년에 몇 안 되는 즐거움 중 하나다. 물놀이와 관광이 빠지지
+                    않고 포함되는 여름
+                  </span>
+                </a>
+              </li>
+              <li class="contentLi">
+                <a href="#none" title="SUMMER ACC. for CITY ESCAPE">
+                  <img
+                    src="img/lafuma_life/life_refresh16.jpg"
+                    alt="SUMMER ACC. for CITY ESCAPE"
+                  />
+                  <em>URBAN LIFE</em>
+                  <p>SUMMER ACC. for CITY ESCAPE</p>
+                  <span>
+                    월드컵의 열기와 함께 본격 찾아온 여름. 멀리 떠나는 여행에
+                    오히려 더 큰 피로감을 느끼는 이들에게는 도심 속으로 떠나는
+                    ‘시티 이스케이프 C
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <div id="footer">
+        <p class="footerline">
+          <img src="img/footerline.jpg" alt="footerline" />
+        </p>
+        <div class="footer_nav">
+          <div class="footer_n">
+            <ul>
+              <li><a href="#" title="제품">제품</a></li>
+              <li><a href="#" title="LFmall">LFmall</a></li>
+              <li><a href="#" title="새 소식">새 소식</a></li>
+              <li><a href="#" title="매장 안내">매장 안내</a></li>
+              <li>
+                <a href="#" title="매장개설안내"
+                  ><span class="color_gray">매장개설안내</span></a
+                >
+              </li>
+              <li>
+                <a href="#" title="고객센터"
+                  ><span class="color_gray">고객센터</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="tooter_sns">
+            <ul>
+              <li>
+                <a href="#" title="페이스북"
+                  ><img src="img/icon/facebook.png" alt="페이스북"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="인스타그램"
+                  ><img src="img/icon/instagram.png" alt="인스타그램"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="블로그"
+                  ><img src="img/icon/blog.png" alt="블로그"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerArea">
+          <div class="footer_family">
+            <p class="footer_family_a">
+              <a href="http://www.lafumakorea./co.kr" title="lafuma">
+                <img src="img/family0.png" alt="lafuma" />
+              </a>
+            </p>
+            <p class="footer_family_a">
+              <a href="https://www.lafuma.com/fr/" title="lafuma_fr">
+                <img src="img/family1.png" alt="lafuma_fr" />
+              </a>
+            </p>
+            <div class="family_site">
+              <p>
+                <button>FAMILY SITE<span>▼</span></button>
+              </p>
+              <ul>
+                <li>
+                  <a href="http://www.lfcorp.com/" title="LFCORP"> LFCORP </a>
+                </li>
+                <li>
+                  <a href="http://www.daks.co.kr/" title="DAKS"> DAKS </a>
+                </li>
+                <li>
+                  <a href="http://www.tngt.co.kr/index" title="TNGT"> TNGT </a>
+                </li>
+                <li>
+                  <a href="http://www.hazzys.com/" title="HAZZYS"> HAZZYS </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.jillstuart.co.kr/#page-top"
+                    title="JILLSTUART"
+                  >
+                    JILLSTUART
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.maestro.co.kr/" title="MAESTRO">
+                    MAESTRO
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.bluelounge.co.kr/" title="BLUE LOUNGE">
+                    BLUE LOUNGE
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.a-t-corner.com/" title="A.T.CORNER">
+                    A.T.CORNER
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html" title="LFmall"> LFmall </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="copy">
+            <p>copyright (c) 2019 hera_shin all rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

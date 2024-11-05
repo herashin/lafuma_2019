@@ -1,0 +1,4 @@
+	*{margin:0; padding:0;}
+	li{list-style-type:none;}
+	a:link, a:visited{text-decoration:none;color:#000;}
+	#wrap{min-width:1600px;max-width:1920px; width:100%; margin:0 auto;}

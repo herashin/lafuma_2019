@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>HISTORY</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/footer_family.js"></script>
+    <script src="js/header.js"></script>
+    <style>
+      /*########## wrap ##########*/
+      #wrap {
+        min-width: 1600px;
+        max-width: 1920px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      /*########## headerWrap ##########*/
+      #headerWrap {
+        width: 100%;
+        height: 115px;
+        margin: 0 auto;
+        border-bottom: 1px solid #ddd;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      #header {
+        width: 1600px;
+        margin: 0 auto;
+        position: relative;
+      }
+      /*##### headerWrap + h1 #####*/
+      #header h1 {
+        width: 174px;
+        height: 45px;
+        position: absolute;
+        left: 100px;
+        top: 30px;
+      }
+      /*##### headerWrap + infoMenu #####*/
+      .infoMenu {
+        width: 1590px;
+        text-align: right;
+        padding-right: 10px;
+      }
+      .infoMenu li {
+        display: inline;
+        font-size: 0.8em;
+      }
+
+      .infoMenu li a {
+        padding: 0 10px;
+        color: #000;
+      }
+      /*##### gnb #####*/
+      #gnb {
+        width: 1094px;
+        height: 98px;
+        margin-left: 250px;
+        font-weight: bold;
+        text-align: center;
+      }
+      #gnb .navWrap {
+        height: 48px;
+        line-height: 38px;
+        padding: 30px 0 20px 0;
+      }
+      #gnb .navWrap li {
+        width: 180px;
+        height: 39px;
+        float: left;
+        text-align: center;
+      }
+      #gnb .navWrap li ul {
+        display: none;
+      }
+      #gnb img {
+        position: absolute;
+        left: 1495px;
+        top: 50px;
+      }
+      /*##### 기능 #####*/
+      #gnb ul li:hover {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb .navWrap:hover ul li {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb ul li:hover ul,
+      #gnb ul li:focus ul {
+        display: block;
+      }
+
+      /*########## container + title ##########*/
+      #container {
+        width: 100%;
+        margin: 115px auto 50px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #title {
+        width: 100%;
+        margin: 0 auto;
+        text-indent: 80px;
+        overflow: hidden;
+      }
+      #title h2 {
+        width: 1600px;
+        font-size: 50px;
+        margin: 0 auto;
+        transition: 0.8s ease;
+      }
+      #title .history:hover h2 {
+        color: #e04307;
+        transition: 0.8s ease;
+      }
+      #title .history {
+        width: 100%;
+        height: 185px;
+        margin: 0 auto;
+      }
+      #title .history p {
+        width: 1600px;
+        font-size: 20px;
+        color: #52585c;
+        font-weight: bold;
+        text-indent: 80px;
+        margin: 0 auto;
+      }
+
+      #title .history p {
+        font-size: 20px;
+        color: #52585c;
+        font-weight: bold;
+        opacity: 0;
+        margin-top: 50px;
+        transition: all 1s ease 0.2s;
+      }
+      #title .history:hover p {
+        opacity: 1;
+        margin-top: 0;
+      }
+
+      #title .visual_title {
+        width: 100%;
+        margin: 0px auto 70px;
+        padding-top: 80px;
+        text-align: center;
+        border-top: 2px solid #333638;
+      }
+
+      #title .visual_title h3 {
+        font-size: 40px;
+        width: 100%;
+      }
+      #title .visual_title p {
+        font-size: 18px;
+        color: #52585c;
+        font-weight: bold;
+      }
+
+      /*########## container + visual_section ##########*/
+
+      #visual_section {
+        min-width: 1600px;
+        max-width: 1920px;
+        width: 100%;
+        margin: 0 auto 50px;
+        overflow: hidden;
+        font-family: arial;
+      }
+
+      #visual_section ul {
+        width: 100%;
+        margin: 0 auto;
+      }
+      #visual_section ul li {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #visual_section ul li img {
+        width: 1120px;
+        margin: -81px auto 0; /*margin-top:-81px;*/
+        transition: 0.7s ease;
+      }
+      #visual_section ul li h3 {
+        position: absolute;
+        left: 540px;
+        top: 30px;
+        color: rgba(255, 255, 255, 0);
+        font-size: 25px;
+      }
+      #visual_section ul li p {
+        position: absolute;
+        left: 570px;
+        top: 70px;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0);
+        text-align: left;
+      }
+      #visual_section ul li:first-child img {
+        margin-top: 0;
+      }
+      #visual_section ul li:first-child p {
+        top: 145px;
+      }
+      #visual_section ul li:first-child h3 {
+        top: 110px;
+      }
+      #visual_section ul li em {
+        font-style: normal;
+      }
+
+      #visual_section ul .color_000 p,
+      #visual_section ul .color_000 h3 {
+        color: rgba(0, 0, 0, 0);
+      }
+      /* 기능 */
+      #visual_section ul .color_000:hover p,
+      #visual_section ul .color_000:hover h3 {
+        color: rgba(0, 0, 0, 1);
+        transition: 0.7s ease;
+      }
+      #visual_section ul li:hover p,
+      #visual_section ul li:hover h3 {
+        color: rgba(255, 255, 255, 1);
+        transition: 0.7s ease;
+      }
+      /*########## container + list ##########*/
+
+      #list {
+        width: 100px;
+        position: fixed;
+        left: 50px;
+        top: 500px;
+      }
+      #list dl {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      #list dt {
+        width: 100%;
+        margin-bottom: 30px;
+        color: #aaa;
+      }
+      #list dd {
+        width: 100%;
+        margin: 10px 0;
+        font-weight: bold;
+      }
+      /*#list dd a:visited{color:#E15C33;}*/
+
+      #list .history_color a {
+        color: #d75f36;
+      }
+      #list .history_color a:before {
+        content: "─";
+        padding-right: 5px;
+      }
+
+      /*########## footer ##########*/
+      #footer {
+        width: 100%;
+        /*position:absolute; bottom:0;left:0;*/
+        margin: 50px auto 0;
+      }
+      #footer .footerline {
+        width: 1600px;
+        margin: 0 auto;
+      }
+      #footer .footer_nav {
+        width: 1310px;
+        height: 60px;
+        margin: 0 auto;
+      }
+      #footer .footer_n {
+        width: 786px;
+        height: 100%;
+        float: left;
+      }
+      #footer .footer_n ul {
+        width: 786px;
+        height: 100%;
+        line-height: 60px;
+      }
+      #footer .footer_n ul li {
+        display: inline;
+        padding-right: 30px;
+        font-size: 14px;
+      }
+      #footer .footer_n .color_gray {
+        color: #8f8f8e;
+      }
+      #footer .tooter_sns {
+        width: 524px;
+        height: 100%;
+        float: left;
+      }
+      #footer .tooter_sns ul {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        text-align: right;
+      }
+      #footer .tooter_sns ul li {
+        width: 30px;
+        display: inline;
+        padding: 0 15px;
+      }
+      #footer .tooter_sns ul li a {
+        width: 30px;
+        height: 30px;
+      }
+      #footer .tooter_sns ul li a img {
+        width: 30px;
+        height: 30px;
+      }
+      #footer .footerArea {
+        width: 1310px;
+        height: 50px;
+        margin: 0 auto;
+      }
+      #footer .footer_family_a {
+        width: 150px;
+        display: block;
+        float: left;
+      }
+      #footer .family_site {
+        width: 150px;
+        float: left;
+        position: relative;
+      }
+      #footer .family_site button {
+        border: 1px solid #fff;
+        background-color: #fff;
+      }
+      #footer .family_site ul {
+        width: 200px;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        background-color: #666;
+      }
+      #footer .family_site ul li {
+        padding: 5px 0;
+        display: none;
+        border-bottom: 1px dashed #ccc;
+      }
+      #footer .family_site ul li a {
+        color: #aaa;
+      }
+      #footer .family_site:hover ul {
+        display: block;
+      }
+      /*  기능 */
+      #footer .copy {
+        width: 40%;
+        height: 100%;
+        float: left;
+        text-align: right;
+        color: #ccc;
+      }
+    </style>
+    <script>
+      jQuery(document).ready(function () {
+        jQuery(".product").hover(
+          function () {
+            /* product의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "320px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".lafuma,.lookbook").hover(
+          function () {
+            /* lafuma,lookbook의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "200px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".store").hover(
+          function () {
+            /* store의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "165px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+        jQuery("#headerWrap").css({ transition: "all 0.3s" });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <div id="headerWrap">
+        <div id="header">
+          <h1>
+            <a href="index.html" title="lafuma">
+              <img src="img/logo.png" alt="logo" />
+            </a>
+          </h1>
+          <ul class="infoMenu">
+            <li>
+              <a href="logIn.html" title="LOGIN"> LOGIN </a>
+            </li>
+            <li>
+              <a href="sub_join.html" title="JOIN"> JOIN </a>
+            </li>
+          </ul>
+          <div id="gnb">
+            <ul class="navWrap">
+              <li class="lafuma">
+                <a href="sub_about.html" title="LAFUMA"> LAFUMA </a>
+                <ul>
+                  <li>
+                    <a href="sub_about.html" title="ABOUT">ABOUT</a>
+                  </li>
+                  <li>
+                    <a href="sub_history.html" title="HISTORY">HISTORY</a>
+                  </li>
+                  <li>
+                    <a href="sub_press.html" title="PRESS">PRESS</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="lafuma_life.html" title="LAFUMA LIFE"> LAFUMA LIFE </a>
+              </li>
+              <li class="lookbook">
+                <a href="#none" title="LOOKBOOK"> LOOKBOOK </a>
+                <ul>
+                  <li>
+                    <a href="#none" title="APPAREL">APPAREL</a>
+                  </li>
+                  <li>
+                    <a href="#none" title="CAMPING">CAMPING</a>
+                  </li>
+                  <li>
+                    <a href="#none" title="VIDEO">VIDEO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="product">
+                <a href="#none" title="PRODUCT"> PRODUCT </a>
+                <ul>
+                  <li><a href="product_man.html" title="MEN">MEN</a></li>
+                  <li><a href="#none" title="WOMEN">WOMEN</a></li>
+                  <li><a href="#none" title="FOOTWEAR">FOOTWEAR</a></li>
+                  <li><a href="#none" title="PACK">PACK</a></li>
+                  <li><a href="#none" title="ACCESSORIES">ACCESSORIES</a></li>
+                  <li><a href="#none" title="CAMPING">CAMPING</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="tech.html" title="TECHNOLOGY"> TECHNOLOGY </a>
+              </li>
+              <li class="store">
+                <a href="#none" title="STORE"> STORE </a>
+                <ul>
+                  <li><a href="#none" title="매장찾기">매장찾기</a></li>
+                  <li><a href="#none" title="매장개설안내">매장개설안내</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              <a href="index.html" title="lafuma 패션몰">
+                <img src="img/p_mall.png" alt="lf_mall" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="container">
+        <div id="title">
+          <div class="history">
+            <h2>HISTORY</h2>
+            <p>LAFUMA 브랜드가 걸어온 발자취를 소개합니다.</p>
+          </div>
+          <div class="visual_title">
+            <h3>LAFUMA HISTORY</h3>
+            <p>
+              OUTDOOR 본고장 프랑스에서 탄생한 LAFUMA가<br />
+              스포츠 및 레저용품의 세계적인 그룹으로 성장한 발자취를 소개합니다.
+            </p>
+          </div>
+        </div>
+        <div id="visual_section">
+          <ul>
+            <li>
+              <h3>1930</h3>
+              <p class="text">
+                <em>LAFUMA 브랜드의 탄생</em><br />
+                <span
+                  >LAFUMA는 창업자인 Victor, Alfred, Gabriel 3형제의 성(姓)을
+                  따라서 이름이 지어졌습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content0png.png" alt="history0" />
+            </li>
+            <li>
+              <h3>1934</h3>
+              <p class="text">
+                <em>등산가를 위한 장비</em><br />
+                <span
+                  >에베레스트를 빠르게 정복할 수 있는 등산장비를 위하여
+                  운동선수와 함께 디자인과 제품 개선을 고민했습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content1png.png" alt="history1" />
+            </li>
+
+            <li class="color_000">
+              <h3>1952</h3>
+              <p class="text">
+                <em>프랑스</em><br />
+                <span
+                  >피츠로이(아르헨티나 파타고니아)의 등반에 처음으로 성공한
+                  프랑스 원정대는 라푸마의 가방을 사용했습니다.<br />
+                  프랑스 올림픽팀에 라푸마가 협찬하였습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content2png.png" alt="history2" />
+            </li>
+
+            <li>
+              <h3>1954</h3>
+              <p class="text">
+                <em>라푸마 캠핑 장비의 탄생</em><br />
+                <span
+                  >전문 캠핑 장비를 새롭게 런칭하여 빠른 성공을
+                  이루었습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content3png.png" alt="history3" />
+            </li>
+
+            <li>
+              <h3>1985</h3>
+              <p class="text">
+                <em>기술을 활용한 학교 가방의 출시</em><br />
+                <span
+                  >라푸마의 새로운 기술을 활용한 학교 가방이
+                  출시되었습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content4png.png" alt="history4" />
+            </li>
+
+            <li>
+              <h3>2000</h3>
+              <p class="text">
+                <em>라푸마의 최초의 발자취</em><br />
+                <span
+                  >하이킹을 위한 최초의 모델 및 최초의 에코 디자인 배낭을
+                  출시했습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content5png.png" alt="history5" />
+            </li>
+
+            <li>
+              <h3>2002</h3>
+              <p class="text">
+                <em>지속가능한 Technology</em><br />
+                <span
+                  >라푸마의 아이덴티티 컬러인 오렌지 로고가 등장하였으며,
+                  지속가능한 개발을 위해 계속 노력하고 있습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content6png.png" alt="history6" />
+            </li>
+
+            <li class="color_000">
+              <h3>2006</h3>
+              <p class="text">
+                <em>한국에서 브랜드 전개</em><br />
+                <span
+                  >기존 등산복에서는 거의 볼 수 없었던 밝고 산뜻한 원색과 라인을
+                  활용한 감각적인 디자인을 통해<br />
+                  국내 아웃도어 시장의 흐름을 바꾸어 놓았습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content7png.png" alt="history7" />
+            </li>
+
+            <li class="color_000">
+              <h3>2008</h3>
+              <p class="text">
+                <em>프랑스로 역수출</em><br />
+                <span
+                  >국내에서 기획 및 디자인되어 생산된 제품들은 아시아지역으로
+                  수출되고<br />
+                  프랑스 라푸마 본사에까지 역수출되는 성과를 거두기도
+                  했습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content8png.png" alt="history8" />
+            </li>
+
+            <li>
+              <h3>2011</h3>
+              <p class="text">
+                <em>라푸마 차이나 출범</em><br />
+                <span
+                  >라푸마 차이나를 출범하여 글로벌 시장에서의 위상을 더욱 공고히
+                  하고 있습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content9png.png" alt="history9" />
+            </li>
+
+            <li class="color_000">
+              <h3>2014</h3>
+              <p class="text">
+                <em>언제 어디서나 즐기는 라푸마</em><br />
+                <span
+                  >라푸마는 고객의 변화하는 라이프스타일에 발맞춰<br />
+                  도시에서도 야외에서도 즐길 수 있는 새로운 라인을 확장시키고
+                  있습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content10png.png" alt="history9" />
+            </li>
+
+            <li>
+              <h3>2019</h3>
+              <p class="text">
+                <em>프랑스 감성과 자연 &amp; 인간의 조화</em><br />
+                <span
+                  >모던하면서 심플한 프랑스 감성과<br />
+                  자연과 인간의 조화를 위한 진화된<br />
+                  기술력은 오직 라푸마에서만<br />
+                  경험할 수 있습니다.</span
+                >
+              </p>
+              <img src="img/history/history_content11png.png" alt="history10" />
+            </li>
+          </ul>
+        </div>
+        <div id="list">
+          <dl>
+            <dt>lafuma</dt>
+            <dd class="about_color">
+              <a href="sub_about.html" title="about">about</a>
+            </dd>
+            <dd class="history_color">
+              <a href="sub_history.html" title="history">history</a>
+            </dd>
+            <dd class="press_color">
+              <a href="sub_press.html" title="press">press</a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <div id="footer">
+        <p class="footerline">
+          <img src="img/footerline2.jpg" alt="footerline" />
+        </p>
+        <div class="footer_nav">
+          <div class="footer_n">
+            <ul>
+              <li><a href="#" title="제품">제품</a></li>
+              <li><a href="#" title="LFmall">LFmall</a></li>
+              <li><a href="#" title="새 소식">새 소식</a></li>
+              <li><a href="#" title="매장 안내">매장 안내</a></li>
+              <li>
+                <a href="#" title="매장개설안내"
+                  ><span class="color_gray">매장개설안내</span></a
+                >
+              </li>
+              <li>
+                <a href="#" title="고객센터"
+                  ><span class="color_gray">고객센터</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="tooter_sns">
+            <ul>
+              <li>
+                <a href="#" title="페이스북"
+                  ><img src="img/icon/facebook.png" alt="페이스북"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="인스타그램"
+                  ><img src="img/icon/instagram.png" alt="인스타그램"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="블로그"
+                  ><img src="img/icon/blog.png" alt="블로그"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerArea">
+          <div class="footer_family">
+            <p class="footer_family_a">
+              <a href="http://www.lafumakorea./co.kr" title="lafuma">
+                <img src="img/family0.png" alt="lafuma" />
+              </a>
+            </p>
+            <p class="footer_family_a">
+              <a href="https://www.lafuma.com/fr/" title="lafuma_fr">
+                <img src="img/family1.png" alt="lafuma_fr" />
+              </a>
+            </p>
+            <div class="family_site">
+              <p>
+                <button>FAMILY SITE<span>▼</span></button>
+              </p>
+              <ul>
+                <li>
+                  <a href="http://www.lfcorp.com/" title="LFCORP"> LFCORP </a>
+                </li>
+                <li>
+                  <a href="http://www.daks.co.kr/" title="DAKS"> DAKS </a>
+                </li>
+                <li>
+                  <a href="http://www.tngt.co.kr/index" title="TNGT"> TNGT </a>
+                </li>
+                <li>
+                  <a href="http://www.hazzys.com/" title="HAZZYS"> HAZZYS </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.jillstuart.co.kr/#page-top"
+                    title="JILLSTUART"
+                  >
+                    JILLSTUART
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.maestro.co.kr/" title="MAESTRO">
+                    MAESTRO
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.bluelounge.co.kr/" title="BLUE LOUNGE">
+                    BLUE LOUNGE
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.a-t-corner.com/" title="A.T.CORNER">
+                    A.T.CORNER
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html" title="LFmall"> LFmall </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="copy">
+            <p>copyright (c) 2019 hera_shin all rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

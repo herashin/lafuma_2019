@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>HISTORY</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/footer_family.js"></script>
+    <style>
+      /*########## wrap ##########*/
+      #wrap {
+        min-width: 1600px;
+        max-width: 1920px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      /*########## headerWrap ##########*/
+      #headerWrap {
+        width: 100%;
+        height: 115px;
+        margin: 0 auto;
+        border-bottom: 1px solid #ddd;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      #header {
+        width: 1600px;
+        margin: 0 auto;
+        position: relative;
+      }
+      /*##### headerWrap + h1 #####*/
+      #header h1 {
+        width: 174px;
+        height: 45px;
+        position: absolute;
+        left: 100px;
+        top: 30px;
+      }
+      /*##### headerWrap + infoMenu #####*/
+      .infoMenu {
+        width: 1590px;
+        text-align: right;
+        padding-right: 10px;
+      }
+      .infoMenu li {
+        display: inline;
+        font-size: 0.8em;
+      }
+
+      .infoMenu li a {
+        padding: 0 10px;
+        color: #000;
+      }
+      /*##### gnb #####*/
+      #gnb {
+        width: 1094px;
+        height: 98px;
+        margin-left: 250px;
+        font-weight: bold;
+        text-align: center;
+      }
+      #gnb .navWrap {
+        height: 48px;
+        line-height: 38px;
+        padding: 30px 0 20px 0;
+      }
+      #gnb .navWrap li {
+        width: 180px;
+        height: 39px;
+        float: left;
+        text-align: center;
+      }
+      #gnb .navWrap li ul {
+        display: none;
+      }
+      #gnb img {
+        position: absolute;
+        left: 1495px;
+        top: 50px;
+      }
+      /*##### 기능 #####*/
+      #gnb ul li:hover {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb .navWrap:hover ul li {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb ul li:hover ul,
+      #gnb ul li:focus ul {
+        display: block;
+      }
+
+      /*########## container + title ##########*/
+      #container {
+        width: 100%;
+        margin: 115px auto 50px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #title {
+        width: 100%;
+        height: 185px;
+        margin: 0 auto;
+        margin: 0 auto;
+        text-indent: 80px;
+      }
+      #title h2 {
+        width: 1600px;
+        font-size: 50px;
+        margin: 0 auto;
+        transition: 0.8s ease;
+      }
+      #title:hover h2 {
+        color: #e04307;
+        transition: 0.8s ease;
+      }
+      #title .history {
+        width: 100%;
+        height: 115px;
+        margin: 0 auto;
+      }
+      #title .history p {
+        width: 1600px;
+        font-size: 20px;
+        color: #52585c;
+        font-weight: bold;
+        text-indent: 80px;
+        margin: 50px auto 0;
+        opacity: 0;
+        transition: all 1s ease 0.2s;
+      }
+
+      #title:hover .history p {
+        opacity: 1;
+        margin-top: 0;
+      }
+
+      #page {
+        width: 100%;
+        height: 50px;
+        margin: 0 auto;
+      }
+      #page ul {
+        width: 970px;
+        margin: 0 auto;
+        border-top: 2px solid #000;
+        padding-top: 10px;
+      }
+      #page ul li {
+        display: inline;
+        padding: 0 10px;
+        font-weight: bold;
+      }
+
+      /*########## container + section1 ##########*/
+      #section1 {
+        width: 100%;
+        margin: 0 auto;
+      }
+      #section1 h3 {
+        position: absolute;
+        left: -9999px;
+        font-size: 1px;
+        line-height: 0;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .formBox {
+        width: 100%;
+        height: 800px;
+        margin: 0 auto;
+        background-color: rgba(14, 168, 192, 1);
+        /*	background-image:url("main2.jpg");
+				background-repeat:no-repeat;
+				background-position:center;*/
+        position: relative;
+      }
+      .BackImg0 {
+        position: absolute;
+        right: 529px;
+        top: 153px;
+      }
+      .BackImg1 {
+        position: absolute;
+        right: 138px;
+        top: 153px;
+      }
+      form {
+        width: 1000px;
+        overflow: hidden;
+        margin-left: 5%;
+      }
+      /*	.formBox legend{text-indent:20px;}*/
+      #userId,
+      #userpw,
+      #orderer {
+        width: 70%;
+        height: 35px;
+        margin: 10px auto;
+        text-indent: 10px;
+      }
+      .inputBox {
+        text-align: center;
+        width: 100%;
+      }
+      fieldset {
+        width: 60%;
+        position: relative;
+        padding: 0 20px;
+        border: none;
+        background-color: rgba(182, 190, 190, 0.5);
+        margin: 130px auto 50px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+      }
+      fieldset:last-child {
+        margin: 50px auto;
+      }
+      legend {
+        display: block;
+        font-size: 12px;
+        position: absolute;
+        top: 20px;
+        left: 18px;
+      }
+      #send,
+      #send2 {
+        width: 40%;
+        height: 50px;
+        font-weight: bold;
+        background-color: #232323;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        margin: 0 auto;
+        display: block;
+      }
+      .checkBoxs {
+        margin: 10px 0;
+      }
+      #send:hover,
+      #send2:hover {
+        background-color: rgba(251, 125, 22, 0.8);
+      }
+
+      .joinArea {
+        margin: 10px 0;
+        font-size: 12px;
+      }
+      .area1 {
+        border-top: 1px solid #ccc;
+        padding-top: 5px;
+      }
+      .joinArea a {
+        background-color: #999;
+        padding: 0 10px;
+        margin-left: 10px;
+        color: #fff;
+      }
+      /*	.joinArea span{width:30%;display:block;float:left;}*/
+
+      .textBox {
+        width: 100%;
+        margin: 20px 0;
+        padding-top: 5px;
+        border-top: 1px solid #ccc;
+      }
+      .textBox span {
+        display: block;
+      }
+      .textBox a {
+        display: block;
+        font-size: 12px;
+        margin: 10px 0;
+        width: 90px;
+        background-color: #999;
+        padding: 0 10px;
+        color: #fff;
+      }
+
+      .formBox:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      /*########## container + list ##########*/
+
+      #list {
+        width: 100px;
+        position: fixed;
+        left: 50px;
+        top: 500px;
+      }
+      #list dl {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      #list dt {
+        width: 100%;
+        margin-bottom: 30px;
+        color: #aaa;
+      }
+      #list dd {
+        width: 100%;
+        margin: 10px 0;
+        font-weight: bold;
+      }
+      /*#list dd a:visited{color:#E15C33;}*/
+
+      #list .press_color a {
+        color: #d75f36;
+      }
+      #list .press_color a:before {
+        content: "─";
+        padding-right: 5px;
+      }
+      /*########## footer ##########*/
+      #footer {
+        width: 100%;
+        /*position:absolute; bottom:0;left:0;*/
+        margin: 50px auto 0;
+      }
+      #footer .footerline {
+        width: 1600px;
+        margin: 0 auto;
+      }
+      #footer .footer_nav {
+        width: 1310px;
+        height: 60px;
+        margin: 0 auto;
+      }
+      #footer .footer_n {
+        width: 786px;
+        height: 100%;
+        float: left;
+      }
+      #footer .footer_n ul {
+        width: 786px;
+        height: 100%;
+        line-height: 60px;
+      }
+      #footer .footer_n ul li {
+        display: inline;
+        padding-right: 30px;
+        font-size: 14px;
+      }
+      #footer .footer_n .color_gray {
+        color: #8f8f8e;
+      }
+      #footer .tooter_sns {
+        width: 524px;
+        height: 100%;
+        float: left;
+      }
+      #footer .tooter_sns ul {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        text-align: right;
+      }
+      #footer .tooter_sns ul li {
+        width: 30px;
+        display: inline;
+        padding: 0 15px;
+      }
+      #footer .tooter_sns ul li a {
+        width: 30px;
+        height: 30px;
+      }
+      #footer .tooter_sns ul li a img {
+        width: 30px;
+        height: 30px;
+      }
+      #footer .footerArea {
+        width: 1310px;
+        height: 50px;
+        margin: 0 auto;
+      }
+      #footer .footer_family_a {
+        width: 150px;
+        display: block;
+        float: left;
+      }
+      #footer .family_site {
+        width: 150px;
+        float: left;
+        position: relative;
+      }
+      #footer .family_site button {
+        border: 1px solid #fff;
+        background-color: #fff;
+      }
+      #footer .family_site ul {
+        width: 200px;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        background-color: #666;
+      }
+      #footer .family_site ul li {
+        padding: 5px 0;
+        display: none;
+        border-bottom: 1px dashed #ccc;
+      }
+      #footer .family_site ul li a {
+        color: #aaa;
+      }
+      #footer .family_site:hover ul {
+        display: block;
+      }
+      /*  기능 */
+      #footer .copy {
+        width: 40%;
+        height: 100%;
+        float: left;
+        text-align: right;
+        color: #ccc;
+      }
+    </style>
+    <script>
+      jQuery(document).ready(function () {
+        jQuery(".product").hover(
+          function () {
+            /* product의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "320px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".lafuma,.lookbook").hover(
+          function () {
+            /* lafuma,lookbook의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "200px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".store").hover(
+          function () {
+            /* store의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "165px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+        jQuery("#headerWrap").css({ transition: "all 0.3s" });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div id="headerWrap">
+        <div id="header">
+          <h1>
+            <a href="index.html" title="lafuma">
+              <img src="img/logo.png" alt="logo" />
+            </a>
+          </h1>
+          <ul class="infoMenu">
+            <li>
+              <a href="logIn.html" title="LOGIN"> LOGIN </a>
+            </li>
+            <li>
+              <a href="sub_join.html" title="JOIN"> JOIN </a>
+            </li>
+          </ul>
+          <div id="gnb">
+            <ul class="navWrap">
+              <li class="lafuma">
+                <a href="sub_about.html" title="LAFUMA"> LAFUMA </a>
+                <ul>
+                  <li>
+                    <a href="sub_about.html" title="ABOUT">ABOUT</a>
+                  </li>
+                  <li>
+                    <a href="sub_history.html" title="HISTORY">HISTORY</a>
+                  </li>
+                  <li>
+                    <a href="sub_press.html" title="PRESS">PRESS</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="lafuma_life.html" title="LAFUMA LIFE"> LAFUMA LIFE </a>
+              </li>
+              <li class="lookbook">
+                <a href="#none" title="LOOKBOOK"> LOOKBOOK </a>
+                <ul>
+                  <li>
+                    <a href="#none" title="APPAREL">APPAREL</a>
+                  </li>
+                  <li>
+                    <a href="#none" title="CAMPING">CAMPING</a>
+                  </li>
+                  <li>
+                    <a href="#none" title="VIDEO">VIDEO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="product">
+                <a href="#none" title="PRODUCT"> PRODUCT </a>
+                <ul>
+                  <li><a href="product_man.html" title="MEN">MEN</a></li>
+                  <li><a href="#none" title="WOMEN">WOMEN</a></li>
+                  <li><a href="#none" title="FOOTWEAR">FOOTWEAR</a></li>
+                  <li><a href="#none" title="PACK">PACK</a></li>
+                  <li><a href="#none" title="ACCESSORIES">ACCESSORIES</a></li>
+                  <li><a href="#none" title="CAMPING">CAMPING</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="tech.html" title="TECHNOLOGY"> TECHNOLOGY </a>
+              </li>
+              <li class="store">
+                <a href="#none" title="STORE"> STORE </a>
+                <ul>
+                  <li><a href="#none" title="매장찾기">매장찾기</a></li>
+                  <li><a href="#none" title="매장개설안내">매장개설안내</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              <a href="index.html" title="lafuma 패션몰">
+                <img src="img/p_mall.png" alt="lf_mall" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="container">
+        <div id="title">
+          <div class="history">
+            <h2>LAFUMA Login</h2>
+            <p>WELCOME to LAFUMA</p>
+          </div>
+        </div>
+        <section id="section1">
+          <h3>로그인 영역</h3>
+          <div class="formBox">
+            <p class="BackImg0">
+              <img src="main11.png" alt="배경이미지0" />
+            </p>
+            <p class="BackImg1">
+              <img src="main22.png" alt="배경이미지0" />
+            </p>
+            <form action="#none" method="post">
+              <fieldset>
+                <legend>회원 로그인</legend>
+                <p class="inputBox">
+                  <input
+                    id="userId"
+                    type="text"
+                    name="userId"
+                    placeholder="아이디를 입력해주세요."
+                    required="required"
+                    title="userId"
+                    maxlength="12"
+                  />
+                </p>
+                <p class="inputBox">
+                  <input
+                    id="userpw"
+                    type="password"
+                    name="userpw"
+                    placeholder="비밀번호를 입력해주세요."
+                    required="required"
+                    title="pw"
+                    autocomplete="off"
+                    maxlength="16"
+                  />
+                </p>
+                <p class="checkBoxs">
+                  <input id="checkBox" type="checkbox" name="checkBox" /><label
+                    >아이디 저장</label
+                  >
+                </p>
+                <p>
+                  <input
+                    id="send"
+                    type="submit"
+                    name="send"
+                    value="LOGIN"
+                    title="send"
+                  />
+                </p>
+                <p class="joinArea area1">
+                  <span>아직도 회원이 아니신가요??</span
+                  ><a href="sub_join.html" title="회원가입">회원가입 &gt;</a>
+                </p>
+                <p class="joinArea">
+                  <span>아이디/비밀번호를 잊으셨나요?</span
+                  ><a href="#none" title="아이디 비번"
+                    >아이디/비밀번호 찾기 &gt;</a
+                  >
+                </p>
+              </fieldset>
+              <fieldset>
+                <legend>비회원 로그인</legend>
+                <p class="inputBox">
+                  <input
+                    id="orderer"
+                    name="orderer"
+                    type="text"
+                    title="orderer"
+                    required="required"
+                    placeholder="주문자명"
+                  />
+                </p>
+                <p class="joinArea">
+                  <span>주문자 전화번호</span
+                  ><a href="#none" title="휴대폰인증">휴대폰 인증하기 &gt;</a>
+                </p>
+                <p>
+                  <input
+                    id="send2"
+                    type="submit"
+                    name="send"
+                    value="주문조회"
+                    title="send"
+                  />
+                </p>
+                <p class="textBox">
+                  <span
+                    >비회원으로 주문하신 경우에만 비회원 주문조회가
+                    가능합니다.</span
+                  >
+                  <span
+                    >회원가입시 바로 누릴 수 있는 <b>LFmall 회원 혜택</b></span
+                  >
+                  <a href="sub_join.html" title="회원가입">회원가입 &gt;</a>
+                </p>
+              </fieldset>
+            </form>
+          </div>
+        </section>
+
+        <div id="list">
+          <dl>
+            <dt>lafuma</dt>
+            <dd class="about_color">
+              <a href="index.html" title="Home">Home</a>
+            </dd>
+            <dd class="history_color">
+              <a href="sub_join.html" title="Join">Join</a>
+            </dd>
+            <dd class="press_color">
+              <a href="logIn.html" title="Login">Login</a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <div id="footer">
+        <p class="footerline">
+          <img src="img/footerline2.jpg" alt="footerline" />
+        </p>
+        <div class="footer_nav">
+          <div class="footer_n">
+            <ul>
+              <li><a href="#" title="제품">제품</a></li>
+              <li><a href="#" title="LFmall">LFmall</a></li>
+              <li><a href="#" title="새 소식">새 소식</a></li>
+              <li><a href="#" title="매장 안내">매장 안내</a></li>
+              <li>
+                <a href="#" title="매장개설안내"
+                  ><span class="color_gray">매장개설안내</span></a
+                >
+              </li>
+              <li>
+                <a href="#" title="고객센터"
+                  ><span class="color_gray">고객센터</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="tooter_sns">
+            <ul>
+              <li>
+                <a href="#" title="페이스북"
+                  ><img src="img/icon/facebook.png" alt="페이스북"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="인스타그램"
+                  ><img src="img/icon/instagram.png" alt="인스타그램"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="블로그"
+                  ><img src="img/icon/blog.png" alt="블로그"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerArea">
+          <div class="footer_family">
+            <p class="footer_family_a">
+              <a href="http://www.lafumakorea./co.kr" title="lafuma">
+                <img src="img/family0.png" alt="lafuma" />
+              </a>
+            </p>
+            <p class="footer_family_a">
+              <a href="https://www.lafuma.com/fr/" title="lafuma_fr">
+                <img src="img/family1.png" alt="lafuma_fr" />
+              </a>
+            </p>
+            <div class="family_site">
+              <p>
+                <button>FAMILY SITE<span>▼</span></button>
+              </p>
+              <ul>
+                <li>
+                  <a href="http://www.lfcorp.com/" title="LFCORP"> LFCORP </a>
+                </li>
+                <li>
+                  <a href="http://www.daks.co.kr/" title="DAKS"> DAKS </a>
+                </li>
+                <li>
+                  <a href="http://www.tngt.co.kr/index" title="TNGT"> TNGT </a>
+                </li>
+                <li>
+                  <a href="http://www.hazzys.com/" title="HAZZYS"> HAZZYS </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.jillstuart.co.kr/#page-top"
+                    title="JILLSTUART"
+                  >
+                    JILLSTUART
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.maestro.co.kr/" title="MAESTRO">
+                    MAESTRO
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.bluelounge.co.kr/" title="BLUE LOUNGE">
+                    BLUE LOUNGE
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.a-t-corner.com/" title="A.T.CORNER">
+                    A.T.CORNER
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html" title="LFmall"> LFmall </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="copy">
+            <p>copyright (c) 2019 hera_shin all rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

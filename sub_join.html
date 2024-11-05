@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>HISTORY</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+      /*########## wrap ##########*/
+      #wrap {
+        max-width: 1920px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      /*########## headerWrap ##########*/
+      #headerWrap {
+        width: 100%;
+        height: 115px;
+        margin: 0 auto;
+        border-bottom: 1px solid #ddd;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s;
+      }
+
+      #header {
+        width: 1600px;
+        margin: 0 auto;
+        position: relative;
+      }
+      /*  헤더 부분 보더 바텀 */
+
+      /*##### headerWrap + h1 #####*/
+      #header h1 {
+        width: 174px;
+        height: 45px;
+        position: absolute;
+        left: 100px;
+        top: 30px;
+      }
+      /*##### headerWrap + infoMenu #####*/
+      .infoMenu {
+        width: 1590px;
+        text-align: right;
+        padding-right: 10px;
+        margin: 0 auto;
+      }
+      .infoMenu li {
+        display: inline;
+        font-size: 0.8em;
+      }
+
+      .infoMenu li a {
+        padding: 0 10px;
+        color: #000;
+      }
+      /*##### gnb #####*/
+      #gnb {
+        width: 1094px;
+        height: 98px;
+        margin-left: 250px;
+        font-weight: bold;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #gnb .navWrap {
+        height: 48px;
+        line-height: 38px;
+        padding: 30px 0 20px 0;
+      }
+
+      #gnb .navWrap li {
+        width: 180px;
+        height: 39px;
+        float: left;
+        text-align: center;
+      }
+
+      #gnb .navWrap li ul {
+        display: none;
+      }
+
+      #gnb .lfmallImg {
+        width: 82px;
+        position: absolute;
+        left: 1495px;
+        top: 50px;
+      }
+      #gnb .lfmallImg p {
+        width: 100%;
+      }
+      #gnb .lfmallImg a {
+        width: 100%;
+        display: block;
+      }
+      #gnb img {
+        width: 100%;
+      }
+
+      /*##### 기능 #####*/
+      #gnb ul li:hover {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb .navWrap:hover ul li {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      #gnb ul li:hover ul,
+      #gnb ul li:focus ul {
+        display: block;
+      }
+
+      /*########## container + title ##########*/
+      #container {
+        width: 100%;
+        margin: 115px auto 50px;
+        position: relative;
+      }
+
+      #title {
+        width: 100%;
+        height: 185px;
+        margin: 0 auto;
+        margin: 0 auto;
+        text-indent: 80px;
+      }
+      #title p {
+        width: 1116px;
+        margin: 0 auto;
+      }
+      #title p img {
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      #title h2 {
+        width: 1600px;
+        font-size: 50px;
+        margin: 0 auto;
+        transition: 0.8s ease;
+      }
+      #title:hover h2 {
+        color: #e04307;
+        transition: 0.8s ease;
+      }
+      #title .history {
+        width: 100%;
+        height: 115px;
+        margin: 0 auto;
+      }
+      #title .history p {
+        width: 1600px;
+        font-size: 20px;
+        color: #52585c;
+        font-weight: bold;
+        text-indent: 80px;
+        margin: 50px auto 0;
+        opacity: 0;
+        transition: all 1s ease 0.2s;
+      }
+
+      #title:hover .history p {
+        opacity: 1;
+        margin-top: 0;
+      }
+
+      #imgArea {
+        width: 100%;
+        margin: 0 auto;
+      }
+      #imgArea p {
+        width: 1000px;
+        margin: 0 auto;
+      }
+      #imgArea p img {
+        width: 100%;
+      }
+
+      /*##### joinArea #####*/
+      #joinBox {
+        width: 1600px;
+        height: 1220px;
+        /*	border-top:2px solid #000;	*/
+        padding-top: 30px;
+        margin: 0 auto;
+      }
+
+      #joinArea {
+        width: 640px; /* height:1120px; */
+        background-color: #fff;
+        margin: 0 auto 50px;
+        border-radius: 5px;
+
+        /*position:absolute; left:300px; top:165px;*/
+      }
+      #joinArea form {
+        width: 100%;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 0 20px;
+        border-radius: 7px;
+        border: 1px solid #999;
+      }
+      #joinArea form img {
+        width: 20px;
+      }
+      #joinArea form img[alt="upper_arrow"] {
+        width: 10px;
+        transition: ease 0.3s;
+      }
+      #joinArea p {
+        padding: 10px 0;
+      }
+      #joinArea input {
+        width: 275px;
+        height: 30px;
+        text-indent: 5px;
+        /*border-radius:5px;*/
+        border: none;
+        border-bottom: 1px solid #ccc;
+        display: block;
+      }
+      #joinArea legend {
+        width: 50%;
+        float: left;
+        height: 34px;
+        line-height: 34px;
+      }
+      #joinArea .arrow {
+        width: 50%;
+        float: left;
+        text-align: center;
+      }
+      #joinArea .arrow a {
+        width: 50%;
+        display: block;
+      }
+      #joinArea fieldset {
+        border: none;
+        margin-bottom: 50px;
+      }
+
+      #joinArea .firstLegend {
+        width: 100%;
+        font-size: 20px;
+        padding-bottom: 10px;
+        float: none;
+      }
+      .formbox1 p {
+        width: 100%;
+        height: 30px;
+      }
+      .formbox1 input {
+        float: left;
+      }
+      .formbox1 label {
+        float: left;
+        height: 30px;
+        font-size: 12px;
+        line-height: 30px;
+        text-indent: 10px;
+      }
+      .formbox1 label:before {
+        content: "*";
+        color: #fb6a87;
+        padding: 0 5px;
+      }
+      .formbox2 {
+        width: 100%;
+        font-size: 12px;
+        overflow: hidden;
+      }
+      .chkBox1 {
+        width: 100%;
+      }
+      .chkBox1 dl {
+        width: 100%;
+        overflow: hidden;
+      }
+      .chkBox1 dl dt {
+        width: 100%;
+        display: block;
+        margin: 10px 0 3px;
+        height: 30px;
+        border-bottom: 1px dashed #999;
+      }
+      .chkBox1 dl dd {
+        width: 100%;
+        height: 15px;
+        display: block;
+        line-height: 30px;
+        padding: 7px 0;
+      }
+      .chkBox1 i {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        margin-right: 10px;
+        float: left;
+      }
+      .chkBox1 a {
+        width: 225px;
+        display: block;
+        line-height: 15px;
+        float: left;
+        height: 15px;
+        margin-bottom: 5px;
+      }
+      .chkBox1 dl dd a:last-child {
+        text-align: center;
+      }
+      .chkBox1 dl dd a:last-child span {
+        display: block;
+        border-bottom: 1px solid #999;
+        margin: 0 auto;
+        width: 30px;
+        color: #999;
+      }
+
+      /* 기능 hover */
+      .chkBox1 dl dd {
+        display: none;
+      }
+      .chkBox1 dl dt:hover .chkBox1 dl dd {
+        display: block;
+      }
+      .colorlabel {
+        color: #fb6a87;
+      }
+      .sexArea {
+        width: 100%;
+      }
+
+      .sexArea label {
+        width: 100%;
+        display: block;
+        padding: 10px 0;
+      }
+      .sexArea input {
+        width: 40%;
+        height: 30px;
+        float: left;
+      }
+      .sexArea span {
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 5px;
+      }
+      .sexArea:after {
+        position: absolute;
+        clear: both;
+        display: block;
+      }
+
+      /*##### phoneArea #####*/
+      .phoneArea {
+        width: 100%;
+        clear: both;
+        overflow: hidden;
+      }
+      .phoneArea h5 {
+        padding: 10px 0;
+        height: 50px;
+        line-height: 50px;
+        margin-top: 20px;
+        text-indent: 150px;
+        font-size: 16px;
+      }
+      .phoneArea ul {
+        width: 500px;
+        margin: 0 auto;
+      }
+      .phoneArea ul li {
+        display: inline-block;
+        width: 15%;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #999;
+        margin: 0 5px;
+        border-radius: 2px;
+      }
+      .phoneArea ul li:first-child {
+        margin: 0;
+      }
+
+      .phoneArea ul li a {
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        width: 100%;
+      }
+      #phone {
+        margin-left: 150px;
+      }
+
+      .phoneBotton {
+        margin-top: 10px;
+      }
+      .phoneBotton a {
+        display: block;
+        width: 50px;
+        height: 30px;
+        border: 1px solid #999;
+        float: left;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 30px;
+      }
+      .phoneBotton input {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      /*##### formbox3 #####*/
+      #joinArea .formbox3 {
+        width: 100%;
+        font-size: 12px;
+        border-bottom: none;
+        margin-bottom: 10px;
+      }
+      #joinArea .formbox3 legend {
+        text-align: center;
+        text-indent: 35px;
+      }
+      #joinArea .formbox3 dl {
+        width: 500px;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+
+      #joinArea .formbox3 dl dt {
+        width: 100%;
+        display: block;
+        margin: 10px 0 3px;
+        height: 30px;
+      }
+      #joinArea .formbox3 dl dt:first-child {
+        border-bottom: 1px dashed #999;
+      }
+
+      #joinArea .formbox3 dl dt a,
+      .chk_arrow a {
+        color: #fb6a87;
+      }
+
+      #joinArea .formbox3 dl dd {
+        width: 100%;
+        height: 15px;
+        display: block;
+        line-height: 30px;
+        padding: 7px 0;
+        margin: 10px 0;
+      }
+      #joinArea .formbox3 dl i {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        margin-right: 10px;
+        float: left;
+      }
+
+      #joinArea .formbox3 a {
+        width: 225px;
+        display: block;
+        line-height: 15px;
+        float: left;
+        height: 15px;
+        margin-bottom: 5px;
+      }
+      /*	#joinArea .formbox3 dl dd a:last-child{text-align:center;}*/
+      #joinArea .formbox3 dl dd a:last-child span {
+        /*display:block;*/
+        border-bottom: 1px solid #999;
+        width: 30px;
+        color: #999;
+      }
+
+      /* 아코디언 */
+      #joinArea .formbox3 dl dd {
+        display: none;
+      }
+
+      #joinArea input[type="submit"] {
+        width: 480px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border: none;
+        background-color: #d75f36;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        margin: 20px auto;
+      }
+
+      #namebox {
+        margin-top: 30px;
+      }
+
+      #joinArea input[type="submit"]:hover {
+        background-color: rgba(215, 95, 54, 0.8);
+      }
+      .centers {
+        text-align: center;
+      }
+      .textBold {
+        font-weight: bold;
+      }
+
+      /*########## container + list ##########*/
+
+      #list {
+        width: 100px;
+        position: fixed;
+        left: 50px;
+        top: 500px;
+      }
+      #list dl {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      #list dt {
+        width: 100%;
+        margin-bottom: 30px;
+        color: #aaa;
+      }
+      #list dd {
+        width: 100%;
+        margin: 10px 0;
+        font-weight: bold;
+      }
+      /*#list dd a:visited{color:#E15C33;}*/
+
+      #list .press_color a {
+        color: #d75f36;
+      }
+      #list .press_color a:before {
+        content: "─";
+        padding-right: 5px;
+      }
+      /*########## footer ##########*/
+      #footer {
+        width: 100%;
+        /*position:absolute; bottom:0;left:0;*/
+        margin: 50px auto 0;
+      }
+      #footer .footerline {
+        width: 1600px;
+        margin: 0 auto;
+      }
+      #footer .footer_nav {
+        width: 1310px;
+        height: 60px;
+        margin: 0 auto;
+      }
+      #footer .footer_n {
+        width: 786px;
+        height: 100%;
+        float: left;
+      }
+      #footer .footer_n ul {
+        width: 786px;
+        height: 100%;
+        line-height: 60px;
+      }
+      #footer .footer_n ul li {
+        display: inline;
+        padding-right: 30px;
+        font-size: 14px;
+      }
+      #footer .footer_n .color_gray {
+        color: #8f8f8e;
+      }
+      #footer .tooter_sns {
+        width: 524px;
+        height: 100%;
+        float: left;
+      }
+      #footer .tooter_sns ul {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        text-align: right;
+      }
+      #footer .tooter_sns ul li {
+        width: 30px;
+        display: inline;
+        padding: 0 15px;
+      }
+      #footer .tooter_sns ul li a {
+        width: 30px;
+        height: 30px;
+      }
+      #footer .tooter_sns ul li a img {
+        width: 30px;
+        height: 30px;
+      }
+      #footer .footerArea {
+        width: 1310px;
+        height: 50px;
+        margin: 0 auto;
+      }
+
+      #footer .footer_family {
+        width: 786px;
+        height: 100%;
+        float: left;
+      }
+      #footer .footer_family_a {
+        width: 150px;
+        display: block;
+        float: left;
+      }
+      #footer .family_site {
+        width: 150px;
+        float: left;
+        position: relative;
+      }
+      #footer .family_site button {
+        border: 1px solid #fff;
+        background-color: #fff;
+      }
+      #footer .family_site ul {
+        width: 200px;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        background-color: #666;
+      }
+      #footer .family_site ul li {
+        padding: 5px 0;
+        display: none;
+        border-bottom: 1px dashed #ccc;
+      }
+      #footer .family_site ul li a {
+        color: #aaa;
+        display: block;
+      }
+      /*	#footer .family_site:hover ul{display:block;}*/
+      /*  기능 */
+      #footer .copy {
+        width: 40%;
+        height: 100%;
+        float: left;
+        text-align: right;
+        color: #ccc;
+      }
+
+      /* 스마트폰 세로 버전 */
+      @media all and (min-width: 320px) and (max-width: 479px) {
+        #wrap {
+          width: 100%;
+        }
+        #header {
+          width: 100%;
+        }
+        #headerWrap {
+          height: 130px;
+          background-color: rgba(0, 0, 0, 0.7);
+          outline: 1px solid #ccc;
+        }
+        /*##### headerWrap + h1 #####*/
+        #header h1 {
+          left: 0px;
+          top: 0px;
+          width: 100%;
+          height: 40px;
+          background-color: #fff;
+          line-height: 40px;
+        }
+        #header h1 a {
+          display: block;
+          width: 100px;
+          height: 30px;
+          margin: 0 auto;
+        }
+        #header h1 a img {
+          width: 100%;
+          height: 100%;
+        }
+        /*##### headerWrap + infoMenu #####*/
+        .infoMenu {
+          width: 100%;
+        }
+        /*##### gnb #####*/
+        #gnb {
+          width: 320px;
+          font-size: 12px;
+          padding-left: 5%;
+        }
+        #gnb .navWrap li {
+          width: 80px;
+          padding: 0 1%; /*float:none;*/
+        }
+        #gnb .navWrap li a {
+          color: #fff;
+        }
+        #gnb .lfmallImg {
+          left: 250px;
+          top: 28px;
+          display: none;
+        }
+        #gnb ul li:hover ul,
+        #gnb ul li:focus ul {
+          display: none;
+        }
+        /*###########################*/
+
+        /*########## container + title ##########*/
+        #container {
+          width: 100%;
+          margin: 0 auto 50px;
+          position: static;
+        }
+
+        #title {
+          width: 100%;
+          height: 170px;
+          margin: 130px auto 0; /*text-indent:80px;*/
+          overflow: hidden;
+        }
+        #title p {
+          width: 100%;
+          margin: 0;
+          text-indent: 0px;
+        }
+        #title p img {
+          width: 100%;
+          margin: 0;
+          opacity: 0.9;
+          text-indent: 0px;
+        }
+
+        /*##### joinBox #####*/
+        #joinBox {
+          width: 100%; /* height:1300px;*/
+        }
+        #joinArea {
+          width: 100%; /* height:1120px;*/
+          margin: 0 auto 50px;
+          border-radius: 5px;
+        }
+        #joinArea form {
+          width: 97%;
+          padding: 0;
+        }
+        #joinArea form img {
+          width: 20px;
+        }
+        #joinArea p {
+          padding: 10px 0;
+        }
+        #joinArea input {
+          width: 80%;
+          height: 30px;
+          text-indent: 5px;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          display: block;
+        }
+        #joinArea legend {
+          width: 50%;
+        }
+        #joinArea fieldset {
+          border: none;
+          border-bottom: none;
+          margin-bottom: 50px;
+          padding-left: 10px;
+        }
+
+        .formbox1 legend {
+          font-size: 20px;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+        .formbox1 p {
+          width: 100%;
+          height: 30px;
+        }
+        .formbox1 label {
+          height: 45px;
+          line-height: 40px;
+        }
+        .formbox1 label:before {
+          padding: 0;
+        }
+        .formbox2 {
+          width: 100%;
+        }
+        .chkBox1 {
+          width: 100%;
+        }
+        .chkBox1 dl {
+          width: 100%;
+        }
+        .chkBox1 dl dt {
+          width: 90%;
+          margin: 10px 0 3px;
+        }
+        .chkBox1 dl dd {
+          width: 100%;
+          padding: 7px 0;
+        }
+        .chkBox1 img {
+          margin-right: 0px;
+          margin: 0 5px;
+        }
+        #joinArea .chkBox1 dl dt a[title="upper_arrow"] {
+          width: 10%;
+        }
+        #joinArea .chkBox1 dl dd a:last-child {
+          width: 10%;
+        }
+        .chkBox1 a {
+          width: 70%; /*float:none;*/
+        }
+        #joinArea .sexArea input {
+          width: 40%;
+          font-size: 9px;
+        }
+
+        /* 기능 hover */
+        /*	.chkBox1 dl{display:none;}  */
+        .chkBox1 dl dt:hover .chkBox1 dl dd {
+          display: block;
+        }
+        .colorlabel {
+          color: #fb6a87;
+        }
+        .sexArea {
+          width: 100%;
+        }
+
+        .sexArea label {
+          width: 100%;
+          display: block;
+          padding: 10px 0;
+        }
+        .sexArea input {
+          width: 40%;
+          height: 30px;
+          float: left;
+        }
+        .sexArea span {
+          float: left;
+          height: 30px;
+          line-height: 30px;
+          margin: 0 5px;
+        }
+        .sexArea:after {
+          position: absolute;
+          clear: both;
+          display: block;
+        }
+
+        /*##### phoneArea #####*/
+        .phoneArea {
+          width: 100%;
+          clear: both;
+        }
+        .phoneArea h5 {
+          padding: 10px 0;
+        }
+        .phoneArea ul {
+          width: 100%;
+        }
+        .phoneArea ul li {
+          display: inline-block;
+          width: 15%;
+          border: 1px solid #999;
+          margin: 0 5px;
+          border-radius: 2px;
+        }
+        .phoneArea ul li:first-child {
+          margin: 0;
+        }
+
+        .phoneArea ul li a {
+          font-weight: bold;
+        }
+
+        .phoneBotton {
+          margin-top: 10px;
+        }
+        .phoneBotton a {
+          display: block;
+          width: 50px;
+          height: 30px;
+          border: 1px solid #999;
+          float: left;
+          border-radius: 5px;
+          text-align: center;
+          line-height: 30px;
+        }
+        .phoneBotton input {
+          float: left;
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
+
+        /*##### formbox3 #####*/
+        #joinArea .formbox3 {
+          width: 100%;
+          font-size: 12px;
+          border-bottom: none;
+          margin-bottom: 10px;
+        }
+
+        #joinArea .formbox3 dl {
+          width: 100%;
+        }
+        #joinArea .formbox3 dl {
+          width: 100%;
+        }
+        #joinArea .formbox3 dl dt {
+          width: 90%;
+          margin: 10px 0 3px;
+          height: 30px;
+        }
+
+        #joinArea .formbox3 dl dd {
+          width: 100%;
+        }
+
+        #joinArea .formbox3 img {
+          margin-right: 10px;
+          float: left;
+        }
+        #joinArea .formbox3 a {
+          width: 50%;
+          display: block;
+          line-height: 15px;
+          float: left;
+          height: 15px;
+          margin-bottom: 5px;
+        }
+        #joinArea .formbox3 .centers {
+          width: 10%;
+        }
+        /*	#joinArea .formbox3 dl dd a:last-child{}*/
+        #joinArea .formbox3 .firstA {
+          width: 75%;
+        }
+        #joinArea .formbox3 dl dt a[title="upper_arrow"] {
+          width: 10%;
+        }
+        /*	#joinArea .formbox3 dl dd a:last-child{width:10%;}*/
+
+        .formbox3 a {
+          width: 60%; /*float:none;*/
+        }
+
+        #joinArea input[type="submit"] {
+          width: 80%;
+          cursor: pointer;
+          margin: 20px 0 10px 15px;
+        }
+
+        /*########## footer ##########*/
+        #footer {
+          width: 100%;
+          overflow: hidden;
+          margin: 0px auto 0; /*border-top:2px solid #000;*/
+        }
+        #footer .footerline {
+          width: 100%;
+          margin: 0 auto;
+        }
+        #footer .footerline img {
+          width: 100%;
+          height: 5px;
+        }
+        #footer .footer_nav {
+          width: 100%;
+          height: 60px;
+          margin: 0 auto;
+        }
+        #footer .footer_n {
+          width: 100%;
+          height: 60%;
+        }
+        #footer .footer_n ul {
+          width: 100%;
+          height: 100%;
+          line-height: 25px;
+        }
+        #footer .footer_n ul li {
+          display: inline-block;
+          padding-right: 5%;
+          font-size: 12px;
+        }
+        #footer .tooter_sns {
+          width: 100%;
+          height: 55%;
+          display: none;
+        }
+        /*
+				#footer .tooter_sns ul{width:100%;height:45px;margin-top:0px;
+					text-align:center;
+					}
+				#footer .tooter_sns ul li{width:30px;display:inline-block;padding:0 15px;
+					}
+				#footer .tooter_sns ul li a{width:30px;height:30px; display:block;}
+				#footer .tooter_sns ul li a img{width:30px; height:30px;}
+				*/
+        #footer .footerArea {
+          width: 100%;
+        }
+        #footer .footer_family {
+          width: 100%;
+          text-align: center;
+        }
+        #footer .copy {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+    <script>
+      jQuery(document).ready(function () {
+        jQuery(".product").hover(
+          function () {
+            /* product의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "320px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".lafuma,.lookbook").hover(
+          function () {
+            /* lafuma,lookbook의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "200px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+
+        jQuery(".store").hover(
+          function () {
+            /* store의 호버 기능*/
+            jQuery("#headerWrap").css({ height: "165px" });
+          },
+          function () {
+            jQuery("#headerWrap").css({ height: "115px" });
+          }
+        );
+        /*
+				에로우 이미지 클릭하면 
+				하단 숨겨진 동의사항 슬라이드로 나오게 표기
+
+				대상: arrow 이미지
+				이벤트: 클릭 
+				이벤트 핸들러: .chkBox1 dl dd , #joinArea .formbox3 dl dd 가
+				display noen 상태임  클릭으로 모습 보이기
+
+			*/
+        var arrow = true;
+        jQuery(".arrow1").click(function () {
+          if (arrow == true) {
+            jQuery(".chkBox1 dl dd").slideToggle(150, "linear", function () {});
+            jQuery(".arrow1 img").css({ transform: "rotate(180deg)" });
+            arrow = false;
+            console.log(arrow);
+          } else {
+            jQuery(".chkBox1 dl dd").slideToggle(150, "linear", function () {});
+            jQuery(".arrow1 img").css({ transform: "rotate(0deg)" });
+            arrow = true;
+            console.log(arrow);
+          }
+        });
+        var arrow2 = true;
+        jQuery(".arrow2").click(function () {
+          if (arrow2 == true) {
+            jQuery("#joinArea .formbox3 dl dd").slideToggle(
+              150,
+              "linear",
+              function () {}
+            );
+            jQuery(".arrow2 img").css({ transform: "rotate(180deg)" });
+            arrow2 = false;
+          } else {
+            jQuery("#joinArea .formbox3 dl dd").slideToggle(
+              150,
+              "linear",
+              function () {}
+            );
+            jQuery(".arrow2 img").css({ transform: "rotate(0deg)" });
+            arrow2 = true;
+          }
+        });
+        ///////////////////////////////////////////////////////////////////////////////
+        /*
+				대상:첫째 체크박스 이미지 (chkBox1)
+				이벤트: 클릭
+				이벤트 핸들러:첫째 체크박스 이미지를 클릭하면 모두 배경색이 칠해짐
+			*/
+        var backcolor_1 = true;
+        jQuery(".chkBox1 dl dt i").click(function () {
+          if (backcolor_1 == true) {
+            jQuery(".chkBox1 dl i,.chkBox1 dl dt i").css({
+              backgroundColor: "#A7C0DC",
+            });
+            backcolor_1 = false;
+          } else {
+            //jQuery(".chkBox1 dl dt i").click(function(){
+            jQuery(".chkBox1 dl i,.chkBox1 dl dt i").css({
+              backgroundColor: "#fff",
+            });
+            backcolor_1 = true;
+          }
+          //	});
+        });
+        //////////////////////////////////////////////////////////////////////////////
+        /*
+				대상: 체크박스 이미지(.chkBox1)
+				이벤트: 클릭
+				이벤트 핸들러:클릭하면 자기 자신에게 배경색 적용
+			*/
+        var backcolor_dl1 = true;
+
+        jQuery(".chkBox1 dl dd i").click(function () {
+          if (backcolor_dl1 == true) {
+            jQuery(this).css({ backgroundColor: "#A7C0DC" });
+            backcolor_dl1 = false;
+          } else {
+            jQuery(this).css({ backgroundColor: "#fff" });
+            backcolor_dl1 = true;
+          }
+        });
+
+        ///////////////////////////////////////////////////////////////
+        /*
+				대상:첫째 체크박스 이미지(formbox3)
+				이벤트:클릭
+				이벤트 핸들러:첫째 체크박스 클릭하면 모든 체크박스에 배경색 적용
+			*/
+        var backcolor_2 = true;
+        jQuery(".formbox3 dt i").click(function () {
+          if (backcolor_2 == true) {
+            jQuery(".formbox3 dl i").css({ backgroundColor: "#A7C0DC" });
+            backcolor_2 = false;
+          } else {
+            jQuery(".formbox3 dl i").css({ backgroundColor: "#fff" });
+            backcolor_2 = true;
+          }
+        });
+
+        ///////////////////////////////////////////////////////////////
+        /*
+				대상: 체크박스 이미지(.formbox3)
+				이벤트: 클릭
+				이벤트 핸들러:클릭하면 자기 자신에게 배경색 적용
+			*/
+
+        var backcolor_dl2 = true;
+
+        jQuery(".formbox3 dl dd i").click(function () {
+          if (backcolor_dl2 == true) {
+            jQuery(this).css({ backgroundColor: "#A7C0DC" });
+            backcolor_dl2 = false;
+          } else {
+            jQuery(this).css({ backgroundColor: "#fff" });
+            backcolor_dl2 = true;
+          }
+        });
+
+        /*
+				footer영역 패밀리사이트 클릭하면
+				목록 위로 슬라이드 올라오기
+
+				대상: footer .family_site ul
+				이벤트: 클릭
+				이벤트 핸들러: 클릭하면 slide로 ul li 모습 보여짐
+
+				#footer	.footer_family{width:786px;height:100%;float:left;}
+				#footer	.footer_family_a{width:150px;display:block;float:left;}
+				#footer .family_site{width:150px;float:left;}
+				#footer .family_site button{border:1px solid #fff;background-color:#fff;}
+				#footer .family_site ul{width:200px;height:100px;display:none;
+					background-color:#666;overflow:auto;
+					}
+				#footer .family_site ul li{padding:5px 0;}
+				#footer .family_site ul li a{color:#aaa;}
+				#footer .family_site:hover ul{display:block;}
+				/*##### 기능 #####*/
+        /*
+				
+			*/
+        //	jQuery(".family_site ul").hide();
+        jQuery(".family_site p").click(function () {
+          //	jQuery(".family_site ul li").show();
+          jQuery(".family_site ul li").slideToggle();
+        });
+
+        //		jQuery(".family_site ul").slideUp(1000,function);
+        //	});
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div id="headerWrap">
+        <div id="header">
+          <h1>
+            <a href="index.html" title="lafuma">
+              <img src="img/logo.png" alt="logo" />
+            </a>
+          </h1>
+          <ul class="infoMenu">
+            <li>
+              <a href="logIn.html" title="LOGIN"> LOGIN </a>
+            </li>
+            <li>
+              <a href="sub_join.html" title="JOIN"> JOIN </a>
+            </li>
+          </ul>
+          <div id="gnb">
+            <ul class="navWrap">
+              <li class="lafuma">
+                <a href="sub_about.html" title="LAFUMA"> LAFUMA </a>
+                <ul>
+                  <li>
+                    <a href="sub_about.html" title="ABOUT">ABOUT</a>
+                  </li>
+                  <li>
+                    <a href="sub_history.html" title="HISTORY">HISTORY</a>
+                  </li>
+                  <li>
+                    <a href="sub_press.html" title="PRESS">PRESS</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" title="LAFUMA LIFE"> LAFUMA LIFE </a>
+              </li>
+              <li class="lookbook">
+                <a href="#" title="LOOKBOOK"> LOOKBOOK </a>
+                <ul>
+                  <li>
+                    <a href="#" title="APPAREL">APPAREL</a>
+                  </li>
+                  <li>
+                    <a href="#" title="CAMPING">CAMPING</a>
+                  </li>
+                  <li>
+                    <a href="#" title="VIDEO">VIDEO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="product">
+                <a href="#" title="PRODUCT"> PRODUCT </a>
+                <ul>
+                  <li><a href="product_man.html" title="MEN">MEN</a></li>
+                  <li><a href="#" title="WOMEN">WOMEN</a></li>
+                  <li><a href="#" title="FOOTWEAR">FOOTWEAR</a></li>
+                  <li><a href="#" title="PACK">PACK</a></li>
+                  <li><a href="#" title="ACCESSORIES">ACCESSORIES</a></li>
+                  <li><a href="#" title="CAMPING">CAMPING</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" title="TECHNOLOGY"> TECHNOLOGY </a>
+              </li>
+              <li class="store">
+                <a href="#" title="STORE"> STORE </a>
+                <ul>
+                  <li><a href="#" title="매장찾기">매장찾기</a></li>
+                  <li><a href="#" title="매장개설안내">매장개설안내</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p class="lfmallImg">
+              <a href="index.html" title="lafuma 패션몰">
+                <img src="img/p_mall.png" alt="lf_mall" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="container">
+        <div id="title">
+          <!--
+				<p>
+					<img src="img/log/sub7.png" alt="main"/>
+				</p>
+			-->
+
+          <div class="history">
+            <h2>JOIN US</h2>
+            <p>LAFUMA와 함께해요!</p>
+          </div>
+        </div>
+        <div id="imgArea">
+          <p>
+            <img src="img/log/login_benefit.jpg" alt="행사" />
+          </p>
+        </div>
+        <div id="joinBox">
+          <div id="joinArea">
+            <form action="#none" method="post">
+              <fieldset class="formbox1">
+                <legend class="firstLegend">회원가입</legend>
+                <p>
+                  <input
+                    id="idBox"
+                    type="text"
+                    name="idBox"
+                    placeholder="아이디"
+                    autofocus
+                    required="required"
+                  />
+                  <label for="idBox">영문,숫자4~12자리 입력해주세요.</label>
+                </p>
+                <p>
+                  <input
+                    id="pwBox"
+                    type="password"
+                    name="pwBox"
+                    placeholder="비밀번호"
+                    required="required"
+                    title="비밀번호"
+                    autocomplete="off"
+                  />
+                  <label for="pwBox">영문+숫자+특수문자 조합 8~16자리</label>
+                </p>
+                <p>
+                  <input
+                    id="pwBoxChk"
+                    type="password"
+                    name="pwBoxChk"
+                    placeholder="비밀번호 확인"
+                    required="required"
+                    title="비밀번호 확인"
+                    autocomplete="off"
+                  />
+                  <label for="pwBox"
+                    >입력하신 비밀번호를 다시한번 입력해주세요.</label
+                  >
+                </p>
+                <p>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="email"
+                    required="required"
+                    title="email"
+                  />
+                  <label for="pwBox"
+                    >자주 사용하시는 이메일을 입력해주세요.</label
+                  >
+                </p>
+              </fieldset>
+              <fieldset class="formbox2">
+                <legend>본인인증</legend>
+                <p class="arrow arrow1">
+                  <a href="#none" title="upper_arrow">
+                    <img src="img/icon/icon_arrow_up.png" alt="upper_arrow" />
+                  </a>
+                </p>
+                <div class="chkBox1">
+                  <dl>
+                    <dt>
+                      <i
+                        ><img src="img/icon/checkImg.png" alt="체크이미지"
+                      /></i>
+                      <a href="#none" title="이용약관 모두 동의"
+                        >본인 확인을 위한 약관 모두 동의</a
+                      >
+                    </dt>
+                    <dd>
+                      <i
+                        ><img src="img/icon/checkImg.png" alt="체크이미지"
+                      /></i>
+                      <a href="#none" title="개인정보 수집 동의"
+                        >개인정보 수집 및 이용 동의</a
+                      >
+                      <a href="#none" title="보기"><span>보기</span></a>
+                    </dd>
+                    <dd>
+                      <i
+                        ><img src="img/icon/checkImg.png" alt="체크이미지"
+                      /></i>
+                      <a href="#none" title="고유식별 동의"
+                        >고유식별 정보 처리 동의</a
+                      >
+                      <a href="#none" title="보기"><span>보기</span></a>
+                    </dd>
+                    <dd>
+                      <i
+                        ><img src="img/icon/checkImg.png" alt="체크이미지"
+                      /></i>
+                      <a href="#none" title="통신사 이용 약관"
+                        >통신사 이용 약관</a
+                      >
+                      <a href="#none" title="보기"><span>보기</span></a>
+                    </dd>
+                    <dd>
+                      <i
+                        ><img src="img/icon/checkImg.png" alt="체크이미지"
+                      /></i>
+                      <a href="#none" title="서비스 이용 약관"
+                        >서비스 이용 약관</a
+                      >
+                      <a href="#none" title="보기"><span>보기</span></a>
+                    </dd>
+                  </dl>
+                </div>
+                <p>
+                  <input
+                    id="namebox"
+                    type="text"
+                    name="namebox"
+                    required="required"
+                    placeholder="이름"
+                  />
+                  <label for="namebox" class="colorlabel">
+                    ※ 이름은 한글, 영문 대소문자만 입력 가능합니다.</label
+                  >
+                </p>
+                <p class="sexArea">
+                  <label for="birth">생년월일 및 성별을 입력해주세요.</label>
+                  <input
+                    id="birth"
+                    type="text"
+                    name="birth"
+                    maxlength="6"
+                    required="required"
+                    placeholder="생년월일 6자리"
+                  />
+                  <span>─</span>
+                  <input
+                    id="sexArea"
+                    type="text"
+                    name="sexArea"
+                    maxlength="1"
+                    required="required"
+                    title="성별"
+                    placeholder="주민번호 뒷자리 1 혹은 2"
+                  />
+                </p>
+                <!-- 생년월일 숫자로 사용 못하는지 질문하기 -->
+                <div class="phoneArea">
+                  <h5>휴대전화</h5>
+                  <ul>
+                    <li>
+                      <a href="#none" title="skt"> SKT </a>
+                    </li>
+                    <li>
+                      <a href="#none" title="kt"> KT </a>
+                    </li>
+                    <li>
+                      <a href="#none" title="lg"> LG U+ </a>
+                    </li>
+                    <li>
+                      <a href="#none" title="알뜰폰"> 알뜰폰 </a>
+                    </li>
+                  </ul>
+                  <p class="phoneBotton">
+                    <input
+                      id="phone"
+                      type="tel"
+                      name="phone"
+                      placeholder="휴대번호를 입력해주세요."
+                      required="required"
+                      pattern="\d{3}-\d{3,4}-\d{4}"
+                    />
+                    <a href="#none" title="인증">인증</a>
+                  </p>
+                </div>
+              </fieldset>
+              <fieldset class="formbox3">
+                <legend>LF몰 이용약관 동의 구간</legend>
+                <p class="arrow arrow2">
+                  <a href="#none" title="upper_arrow">
+                    <img src="img/icon/icon_arrow_up.png" alt="upper_arrow" />
+                  </a>
+                </p>
+                <dl>
+                  <dt class="chk_arrow">
+                    <i><img src="img/icon/checkImg.png" alt="체크이미지" /></i>
+                    <a href="#none" title="lf몰 약관 모두동의">
+                      LF몰 이용약관 모두 동의
+                    </a>
+                  </dt>
+                  <dd>
+                    <i><img src="img/icon/checkImg.png" alt="체크이미지" /></i>
+                    <a class="firstA" href="#none" title="만 14세 이상 동의">
+                      만 14세 이상입니다.
+                    </a>
+                  </dd>
+                  <dd>
+                    <i><img src="img/icon/checkImg.png" alt="체크이미지" /></i>
+                    <a class="firstA" href="#none" title="통합회원 이용약관">
+                      LFmembers 통합회원 이용약관 (필수)
+                    </a>
+                    <a class="centers" href="#none" title="보기">
+                      <span>보기</span>
+                    </a>
+                  </dd>
+                  <dd>
+                    <i><img src="img/icon/checkImg.png" alt="체크이미지" /></i>
+                    <a class="firstA" href="#none" title="웹사이트 이용약관">
+                      LFmembers 웹사이트 이용약관 (필수)
+                    </a>
+                    <a class="centers" href="#none" title="보기">
+                      <span>보기</span>
+                    </a>
+                  </dd>
+                  <dd>
+                    <i><img src="img/icon/checkImg.png" alt="체크이미지" /></i>
+                    <a class="firstA" href="#none" title="FLmall 이용약관">
+                      LFmall 이용약관 (필수)
+                    </a>
+                    <a class="centers" href="#none" title="보기">
+                      <span>보기</span>
+                    </a>
+                  </dd>
+                  <dd>
+                    <i><img src="img/icon/checkImg.png" alt="체크이미지" /></i>
+                    <a class="firstA" href="#none" title="개인정보 수집 동의">
+                      개인정보 수집 및 이용 동의 (필수)
+                    </a>
+                    <a class="centers" href="#none" title="보기">
+                      <span>보기</span>
+                    </a>
+                  </dd>
+                  <dd>
+                    <i><img src="img/icon/checkImg.png" alt="체크이미지" /></i>
+                    <a class="firstA" href="#none" title="개인정보 위탁 동의">
+                      개인 정보 처리 업무 위탁에 대한 동의 (필수)
+                    </a>
+                    <a class="centers" href="#none" title="보기">
+                      <span>보기</span>
+                    </a>
+                  </dd>
+                  <dd>
+                    <i><img src="img/icon/checkImg.png" alt="체크이미지" /></i>
+                    <a
+                      class="textBold firstA"
+                      href="#none"
+                      title="마케팅 수신 동의"
+                    >
+                      마케팅 정보 수신 동의 (선택)
+                    </a>
+                    <a class="centers" href="#none" title="보기">
+                      <span>보기</span>
+                    </a>
+                  </dd>
+                </dl>
+                <input
+                  id="joinButton"
+                  type="submit"
+                  title="가입하기"
+                  value="가입하기"
+                />
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer">
+        <p class="footerline">
+          <img src="img/footerline.jpg" alt="footerline" />
+        </p>
+        <div class="footer_nav">
+          <div class="footer_n">
+            <ul>
+              <li><a href="#" title="제품">제품</a></li>
+              <li><a href="#" title="LFmall">LFmall</a></li>
+              <li><a href="#" title="새 소식">새 소식</a></li>
+              <li><a href="#" title="매장 안내">매장 안내</a></li>
+              <li>
+                <a href="#" title="매장개설안내"
+                  ><span class="color_gray">매장개설안내</span></a
+                >
+              </li>
+              <li>
+                <a href="#" title="고객센터"
+                  ><span class="color_gray">고객센터</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="tooter_sns">
+            <ul>
+              <li>
+                <a href="#" title="페이스북"
+                  ><img src="img/icon/facebook.png" alt="페이스북"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="인스타그램"
+                  ><img src="img/icon/instagram.png" alt="인스타그램"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="블로그"
+                  ><img src="img/icon/blog.png" alt="블로그"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerArea">
+          <div class="footer_family">
+            <p class="footer_family_a">
+              <a href="http://www.lafumakorea./co.kr" title="lafuma">
+                <img src="img/family0.png" alt="lafuma" />
+              </a>
+            </p>
+            <p class="footer_family_a">
+              <a href="https://www.lafuma.com/fr/" title="lafuma_fr">
+                <img src="img/family1.png" alt="lafuma_fr" />
+              </a>
+            </p>
+            <div class="family_site">
+              <p>
+                <button>FAMILY SITE<span>▼</span></button>
+              </p>
+              <ul>
+                <li>
+                  <a href="http://www.lfcorp.com/" title="LFCORP"> LFCORP </a>
+                </li>
+                <li>
+                  <a href="http://www.daks.co.kr/" title="DAKS"> DAKS </a>
+                </li>
+                <li>
+                  <a href="http://www.tngt.co.kr/index" title="TNGT"> TNGT </a>
+                </li>
+                <li>
+                  <a href="http://www.hazzys.com/" title="HAZZYS"> HAZZYS </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.jillstuart.co.kr/#page-top"
+                    title="JILLSTUART"
+                  >
+                    JILLSTUART
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.maestro.co.kr/" title="MAESTRO">
+                    MAESTRO
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.bluelounge.co.kr/" title="BLUE LOUNGE">
+                    BLUE LOUNGE
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.a-t-corner.com/" title="A.T.CORNER">
+                    A.T.CORNER
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html" title="LFmall"> LFmall </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="copy">
+            <p>copyright (c) 2019 hera_shin all rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+    <title> new document </title>
+	<style>
+	
+		#sideImg{width:800px; height:1100px;
+					position:absolute; left:0; top:0px;}
+				#sideArea{width:750px; height:1025px;
+					border:3px dotted #fcf; 
+					position:relative;}
+
+				#sideArea{width:650px; height:925px;}
+
+				#sideArea p{width:650px; height:925px;	
+					overflow:hidden; 
+					position:absolute; left:0px; top:0px;
+					animation:img1 3s infinite alternate;
+					}
+
+				#sideArea p img{width:100%;}
+
+				@keyframes img1{
+					0%{ opacity:1; }
+					50%{opacity:0;}
+					100%{opacity:0;}
+					}
+					
+				#sideArea .img2{ animation-name:img2; }
+				@keyframes img2{
+					0%{ opacity:0; }
+					50%{ opacity:1; }
+					100%{ opacity:0; }
+					}
+
+				#sideArea .img3{ animation-name:img3; }
+				@keyframes img3{
+					0%{opacity:0;}
+					50%{opacity:0;}
+					100%{opacity:1;}
+					}
+	
+	</style>
+ </head>
+
+ <body>
+			<div id="sideImg">
+				<aside id="sideArea">
+					<p class="img1"><img src="img/log/sub4.png" alt="사이드 이미지"/></p>
+					<p class="img2"><img src="img/log/sub5.png" alt="사이드 이미지"/></p>
+					<p class="img3"><img src="img/log/sub3.png" alt="사이드 이미지"/></p>
+				</aside>
+			</div>
+ </body>
+</html>

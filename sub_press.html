@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>HISTORY</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/footer_family.js"></script>
+    <script src="js/header.js"></script>
+    <style>
+      /*########## wrap ##########*/
+      	#wrap{min-width:1600px;max-width:1920px; width:1600px; margin:0 auto;}
+      /*########## headerWrap ##########*/
+      	#headerWrap{width:100%;height:115px; margin:0 auto;
+      		border-bottom:1px solid #ddd;position:fixed; left:0; top:0;z-index:9999;
+      		background-color:rgba(255,255,255,0.5)
+      		}
+      		#header{width:1600px; margin:0 auto;position:relative;
+      			}
+      		/*##### headerWrap + h1 #####*/
+      			#header h1{width:174px; height:45px;position:absolute;
+      				left:100px;top:30px;}
+      		/*##### headerWrap + infoMenu #####*/
+      			.infoMenu{width:1590px;text-align:right;padding-right:10px;}
+      			.infoMenu li{display:inline;font-size:0.8em;}
+
+      			.infoMenu li a{padding:0 10px; color:#000;}
+      		/*##### gnb #####*/
+      			#gnb{width:1094px;height:98px;margin-left:250px;
+      				font-weight:bold;
+      				text-align:center;
+      				}
+      			#gnb .navWrap{height:48px;line-height:38px;
+      				padding:30px 0 20px 0;
+      				}
+      			#gnb .navWrap li{width:180px;height:39px;float:left;
+      				text-align:center;
+      				}
+      			#gnb .navWrap li ul{display:none;}
+      			#gnb img{position:absolute;left:1495px;top:50px;}
+      		/*##### 기능 #####*/
+      			#gnb ul li:hover{background-color:rgba(0,0,0,0);}
+      			#gnb .navWrap:hover ul li{background-color:rgba(0,0,0,0);}
+      			#gnb ul li:hover ul,#gnb ul li:focus ul{display:block;}
+
+      /*########## container + title ##########*/
+      	#container{min-width:1600px;max-width:1920px; width:100%; margin:115px auto 50px;overflow:hidden;position:relative;}
+
+      	#title{width:100%; height:185px;margin:0 auto;margin:0 auto;text-indent:80px;
+      		}
+      	#title h2{width:1600px;font-size:50px;margin:0 auto;
+      		transition:0.8s ease;
+      		}
+      	#title:hover h2{color:#E04307;transition:0.8s ease;
+      		}
+      	#title .history{width:100%;height:115px;margin:0 auto;}
+      	#title .history p{width:1600px;font-size:20px;color:#52585C;
+      			font-weight:bold;text-indent:80px;margin:50px auto 0;
+      			opacity:0; transition:all 1s ease 0.2s;
+      			}
+
+      	#title:hover  .history p{ opacity:1; margin-top:0;}
+
+      /*########## container + section1 ##########*/
+      	#section1{min-width:1600px;width:1600px;margin:0px auto 70px;
+      		border-top:2px solid #000;
+      		padding-top:100px;position:relative;
+      		}
+      	#section1 h3{width:200px;height:100px;
+      		text-align:right;position:absolute;
+      		left:70px;top:95px;}
+      	#section1 h3:after{content:"─";}
+
+
+      	.section_main{width:970px;height:516px;
+      	overflow:hidden;margin:0 auto;}
+      	.section_main li{width:460px;float:left; position:relative;}
+      	.section_main li:last-child{margin-left:50px;}
+      	.section_main img{display:block;width:460px;}
+      	.section_main em{display:block;width:420px;
+      	font-style:normal;padding:10px 20px;
+      	font-size:20px;font-weight:bold;}
+      	.section_main li a{display:block; width:50px; height:50px;
+      		position:absolute;text-align:center; line-height:50px;
+      		right:0; top:291px;background-color:#fff;
+      		font-size:20px;font-weight:bold;
+      		}
+      	.section_main li a:hover{color:#E04307;}
+      	.section_main p{width:420px;padding:10px 20px;
+      	overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+      	.time{color:#999; font-size:12px;}
+      	#section1{content:""; display:block; clear:both;}
+
+
+      /*########## container + section2 ##########*/
+      	#section2{min-width:1600px;max-width:1920px;width:100%;margin:0 auto 20px;}
+      	#section2 h4{position:absolute;left:-9999px; font-size:1px; width:1px;height:1px; line-height:0px;
+      		overflow:hidden;}
+
+      	.search{width:1000px; height:50px;#000;margin:0 auto 50px;}
+
+
+
+
+      	.search .total{width:350px;height:28px;line-height:30px;float:left;
+      		border-bottom:2px solid #000;margin-right:30px;padding-bottom:10px;}
+
+      	.search_title{width:370px;height:28px;float:left;border-bottom:2px solid #000;padding-bottom:10px;}
+      	.search_title li{line-height:30px;height:30px;padding-bottom:10px;}
+      	.search_title li:last-child{display:none;}
+      	/*########## section2 + form  ##########*/
+      	.search_box{float:left;}
+
+      	.search form{width:200px;height:38px;float:left;text-align:right;margin-left:20px;
+      		/*padding-bottom:10px;*/line-height:38px;
+      		border-bottom:2px solid #000;}
+      	.search .cearchImg{float:left;height:30px;line-height:30px;}
+
+      	.cearchImg a{display:block;}
+
+      	.search fieldset{border:none;}
+      	.search legend{display:none;}
+      	#search_input{border:none;color:#ccc;font-weight:bold;font-size:15px;text-indent:10px;}
+
+      	.search .button_box{width:50px;border:none;}
+
+
+      /*########## container + section2 ##########*/
+      	#pressBox{width:100%;height:1140px;}
+
+      	#pressBox li{width:970px;height:185px;margin:0 auto 25px;
+      		border-bottom:1px solid #ccc;
+      		padding-bottom:20px;}
+      	#pressBox li .imgBox{width:247px;height:185px;float:left;}
+      	#pressBox li .imgBox img{width:100%; height:100%;}
+
+      	#pressBox li dl{width:670px;margin-left:50px;float:left;
+
+      		}
+      	#pressBox li dt{width:100%;height:30px;
+      		padding:30px 0;}
+      	#pressBox li dd{width:100%;height:65px;}
+      	#pressBox li dd:last-child{height:30px;line-height:30px;}
+
+      /*########## container + page ##########*/
+      	#page{width:100%;height:50px; margin:0 auto 20px;}
+      	#page ul{width:970px; margin:0 auto;
+      		padding-top:10px;
+      		}
+      	#page ul li a[title="1"]{color:#E04307;}
+      	#page ul li{display:inline;padding:0 10px;font-weight:bold;}
+      	/*########## container + list ##########*/
+
+      		#list{width:100px;position:fixed;
+      			left:50px; top:500px;}
+      		#list dl{width:100%;text-align:center; text-transform:uppercase;}
+      		#list dt{width:100%; margin-bottom:30px;color:#aaa;}
+      		#list dd{width:100%;margin:10px 0;font-weight:bold;}
+      		/*#list dd a:visited{color:#E15C33;}*/
+
+
+      		#list .press_color a{color:#E04307;}
+      		#list .press_color a:before{content:"─";padding-right:5px;}
+      /*########## footer ##########*/
+      	#footer{width:100%;
+      		/*position:absolute; bottom:0;left:0;*/
+      		margin:50px auto 0;
+      		}
+      	#footer .footerline{width:1600px;margin:0 auto;}
+      	#footer .footer_nav{width:1310px;height:60px;
+      		margin:0 auto;}
+      	#footer	.footer_n{width:786px;height:100%;float:left;}
+      	#footer .footer_n ul{width:786px;height:100%;line-height:60px;
+      		}
+      	#footer .footer_n ul li{display:inline;padding-right:30px;font-size:14px;
+      		}
+      	#footer .footer_n .color_gray{color:#8F8F8E;
+      		}
+      	#footer .tooter_sns{width:524px;height:100%;float:left;
+      		}
+      	#footer .tooter_sns ul{width:100%;height:45px;margin-top:15px;text-align:right;
+      		}
+      	#footer .tooter_sns ul li{width:30px;display:inline;padding:0 15px;
+      		}
+      	#footer .tooter_sns ul li a{width:30px;height:30px;}
+      	#footer .tooter_sns ul li a img{width:30px; height:30px;
+      		}
+      	#footer .footerArea{width:1310px;height:50px;
+      		margin:0 auto;}
+      	#footer	.footer_family{width:786px;height:100%;float:left;}
+      		#footer	.footer_family_a{width:150px;display:block;float:left;}
+      		#footer .family_site{width:150px;float:left;
+      			position:relative;}
+      		#footer .family_site button{border:1px solid #fff;background-color:#fff;}
+      		#footer .family_site ul{width:200px;
+      			position:absolute;left:0; bottom:15px;
+      			background-color:#666;
+      			}
+      		#footer .family_site ul li{padding:5px 0;display:none;
+      			border-bottom:1px dashed #ccc;}
+      		#footer .family_site ul li a{color:#aaa;}
+      		#footer .family_site:hover ul{display:block;}
+      		/*  기능 */
+      	#footer .copy{width:40%;height:100%;float:left;
+      		text-align:right;color:#ccc;}
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div id="headerWrap">
+        <div id="header">
+          <h1>
+            <a href="index.html" title="lafuma">
+              <img src="img/logo.png" alt="logo" />
+            </a>
+          </h1>
+          <ul class="infoMenu">
+            <li>
+              <a href="logIn.html" title="LOGIN"> LOGIN </a>
+            </li>
+            <li>
+              <a href="sub_join.html" title="JOIN"> JOIN </a>
+            </li>
+          </ul>
+          <div id="gnb">
+            <ul class="navWrap">
+              <li class="lafuma">
+                <a href="sub_about.html" title="LAFUMA"> LAFUMA </a>
+                <ul>
+                  <li>
+                    <a href="sub_about.html" title="ABOUT">ABOUT</a>
+                  </li>
+                  <li>
+                    <a href="sub_history.html" title="HISTORY">HISTORY</a>
+                  </li>
+                  <li>
+                    <a href="sub_press.html" title="PRESS">PRESS</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="lafuma_life.html" title="LAFUMA LIFE"> LAFUMA LIFE </a>
+              </li>
+              <li class="lookbook">
+                <a href="#none" title="LOOKBOOK"> LOOKBOOK </a>
+                <ul>
+                  <li>
+                    <a href="#none" title="APPAREL">APPAREL</a>
+                  </li>
+                  <li>
+                    <a href="#none" title="CAMPING">CAMPING</a>
+                  </li>
+                  <li>
+                    <a href="#none" title="VIDEO">VIDEO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="product">
+                <a href="#none" title="PRODUCT"> PRODUCT </a>
+                <ul>
+                  <li><a href="product_man.html" title="MEN">MEN</a></li>
+                  <li><a href="#none" title="WOMEN">WOMEN</a></li>
+                  <li><a href="#none" title="FOOTWEAR">FOOTWEAR</a></li>
+                  <li><a href="#none" title="PACK">PACK</a></li>
+                  <li><a href="#none" title="ACCESSORIES">ACCESSORIES</a></li>
+                  <li><a href="#none" title="CAMPING">CAMPING</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="tech.html" title="TECHNOLOGY"> TECHNOLOGY </a>
+              </li>
+              <li class="store">
+                <a href="#none" title="STORE"> STORE </a>
+                <ul>
+                  <li><a href="#none" title="매장찾기">매장찾기</a></li>
+                  <li><a href="#none" title="매장개설안내">매장개설안내</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              <a href="index.html" title="lafuma 패션몰">
+                <img src="img/p_mall.png" alt="lf_mall" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="container">
+        <div id="title">
+          <div class="history">
+            <h2>PRESS</h2>
+            <p>LAFUMA의 다양한 소식을 만나보세요</p>
+          </div>
+        </div>
+        <section id="section1">
+          <h3>
+            LAFUMA<br />
+            HOT ISSUE<br />
+          </h3>
+          <ul class="section_main">
+            <li>
+              <div>
+                <img src="img/press/main0.jpg" alt="세븐틴 화보" />
+                <em> 세븐틴, 보기만 해도 기분 좋아지는 비주얼[화보] </em>
+                <p>
+                  그룹 세븐틴의 겨울 화보가 공개됐다.<br />
+                  세븐틴이 매거진 퍼스트룩(1st Look) 168호를 통해 라푸마와
+                  함께한 패션 화보를
+                </p>
+                <p class="time">
+                  <span class="year">2018</span>-<span class="month">12</span
+                  >-<span class="day">04</span>
+                </p>
+                <a href="#none" title="more">+</a>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <img src="img/press/main1.jpg" alt="세븐틴 화보" />
+                <em>
+                  LF 라푸마, 전속 모델 세븐틴과 함께한 팬사인회 이벤트 성황리
+                  개최
+                </em>
+                <p>
+                  LF 라푸마, 전속 모델 세븐틴과 함께한 팬사인회<br />
+                  이벤트 성황리 개최“롱패딩은 이렇게” 세븐틴, 훈훈 비주얼+세련된
+                  스타일…겨울 패션의 정석세븐
+                </p>
+                <p class="time">
+                  <span class="year">2018</span>-<span class="month">11</span
+                  >-<span class="day">22</span>
+                </p>
+                <a href="#none" title="more">+</a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="section2">
+          <h4>new press</h4>
+          <div class="search">
+            <p class="total">TOTAL 31</p>
+            <ul class="search_title">
+              <li><a href="#none" title="제목">제목</a></li>
+              <li><a href="#none" title="내용">내용</a></li>
+            </ul>
+
+            <form action="#none" method="get">
+              <fieldset>
+                <legend>search</legend>
+                <p class="search_box">
+                  <input
+                    id="search_input"
+                    type="text"
+                    placeholder="검색어 입력"
+                    name="search"
+                    title="serch"
+                  />
+                </p>
+              </fieldset>
+            </form>
+            <p class="cearchImg">
+              <a href="#none" title="search">
+                <img src="img/press/icon_search.png" alt="검색" />
+              </a>
+            </p>
+          </div>
+          <ul id="pressBox">
+            <li>
+              <p class="imgBox">
+                <a href="#none" title="세븐틴 사인회">
+                  <img src="img/press/press_content0.jpg" alt="세븐틴 사인회" />
+                </a>
+              </p>
+              <dl>
+                <dt>LF 라푸마, 대세 보이그룹 ‘세븐틴’ 사인회 초대 이벤트</dt>
+                <dd>
+                  라이프스타일 전문기업 LF의 아웃도어 브랜드 ‘라푸마’가 오는
+                  11월 20일 진행 예정인 ‘세븐틴’ 팬사인회를 맞아 26일부터 11월
+                  12일까지 팬사인회 초대 이벤트를 실시한다. 라푸마가 준비한
+                  ‘세븐틴’ 팬사인회
+                </dd>
+                <dd class="time">
+                  <span class="year">2018</span>-<span class="month">10</span
+                  >-<span class="day">26</span>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <p class="imgBox">
+                <a href="#none" title="상하이 패션위크">
+                  <img
+                    src="img/press/press_content1.jpg"
+                    alt="상하이 패션위크"
+                  />
+                </a>
+              </p>
+              <dl>
+                <dt>LF, 상하이 패션위크 데뷔한 `라푸마`</dt>
+                <dd>
+                  라푸마 주력 패딩 ‘트루아’ 비롯 방한제품과 세븐틴의 아이돌 굿즈
+                  패키지 특별 구성 30일까지 500세트 예약 판매 후 내달 1일부터
+                  LF몰서 나머지 500세트 한정 판매
+                </dd>
+                <dd class="time">
+                  <span class="year">2018</span>-<span class="month">10</span
+                  >-<span class="day">25</span>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <p class="imgBox">
+                <a href="#none" title="라이프 패키지 예약 판매">
+                  <img
+                    src="img/press/press_content2.jpg"
+                    alt="라이프 패키지 예약 판매"
+                  />
+                </a>
+              </p>
+              <dl>
+                <dt>LF 라푸마, 세븐틴과 함께한 ‘라이프 패키지’ 예약 판매</dt>
+                <dd>
+                  아시아 트렌드 중심지로 떠오르는 중국 상하이에서 프랑스 정통
+                  아웃도어 브랜드 라푸마가 첫 패션위크 무대에 데뷔했다.지난 16일
+                  라이프스타일 전문기업 LF가 국내에 전개하는 프랑스 정통
+                  아웃도어 브랜드 라푸마는 중국
+                </dd>
+                <dd class="time">
+                  <span class="year">2018</span>-<span class="month">9</span
+                  >-<span class="day">17</span>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <p class="imgBox">
+                <a href="#none" title="세븐틴 전속모델 발탁">
+                  <img
+                    src="img/press/press_content3.jpg"
+                    alt="세븐틴 전속모델 발탁"
+                  />
+                </a>
+              </p>
+              <dl>
+                <dt>
+                  LF 라푸마, ‘세븐틴’ 전속모델 발탁..패셔너블 아웃도어로 변신
+                </dt>
+                <dd>
+                  라이프스타일 전문기업 LF가 전개하는 프랑스 정통 아웃도어
+                  브랜드 ‘라푸마’가 2018 가을 겨울 시즌의 새로운 전속 모델로
+                  대세 보이그룹, ‘세븐틴’을 기용한다고 30일 밝혔다. 라푸마는
+                  1930년에 아웃도어의 본
+                </dd>
+                <dd class="time">
+                  <span class="year">2018</span>-<span class="month">08</span
+                  >-<span class="day">30</span>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <p class="imgBox">
+                <a href="#none" title="세계적 톱모델의 카리스마">
+                  <img
+                    src="img/press/press_content4.jpg"
+                    alt="세계적 톱모델의 카리스마"
+                  />
+                </a>
+              </p>
+              <dl>
+                <dt>한혜진표 아웃도어 ‘세계적 톱모델의 카리스마’</dt>
+                <dd>
+                  모델 겸 방송인 한혜진이 아웃도어 브랜드와 함께 틀을 깨는
+                  가을·겨울 시즌 화보를 공개했다. 한혜진은 20일 한 아웃도어
+                  브랜드 화보에 등장해 아웃도어 브랜드의 상식을 깨는
+                  스타일리시한 패션과 당당한 카리스마로 화
+                </dd>
+                <dd class="time">
+                  <span class="year">2018</span>-<span class="month">08</span
+                  >-<span class="day">20</span>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+        </section>
+
+        <div id="page">
+          <ul>
+            <li><a href="#none" title="1">1</a></li>
+            <li><a href="#none" title="2">2</a></li>
+            <li><a href="#none" title="3">3</a></li>
+            <li><a href="#none" title="4">4</a></li>
+            <li><a href="#none" title="5">5</a></li>
+            <li><a href="#none" title="6">6</a></li>
+            <li><a href="#none" title="7">7</a></li>
+          </ul>
+        </div>
+        <div id="list">
+          <dl>
+            <dt>lafuma</dt>
+            <dd class="about_color">
+              <a href="sub_about.html" title="about">about</a>
+            </dd>
+            <dd class="history_color">
+              <a href="sub_history.html" title="history">history</a>
+            </dd>
+            <dd class="press_color">
+              <a href="sub_press.html" title="press">press</a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <div id="footer">
+        <p class="footerline">
+          <img src="img/footerline2.jpg" alt="footerline" />
+        </p>
+        <div class="footer_nav">
+          <div class="footer_n">
+            <ul>
+              <li><a href="#" title="제품">제품</a></li>
+              <li><a href="#" title="LFmall">LFmall</a></li>
+              <li><a href="#" title="새 소식">새 소식</a></li>
+              <li><a href="#" title="매장 안내">매장 안내</a></li>
+              <li>
+                <a href="#" title="매장개설안내"
+                  ><span class="color_gray">매장개설안내</span></a
+                >
+              </li>
+              <li>
+                <a href="#" title="고객센터"
+                  ><span class="color_gray">고객센터</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="tooter_sns">
+            <ul>
+              <li>
+                <a href="#" title="페이스북"
+                  ><img src="img/icon/facebook.png" alt="페이스북"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="인스타그램"
+                  ><img src="img/icon/instagram.png" alt="인스타그램"
+                /></a>
+              </li>
+              <li>
+                <a href="#" title="블로그"
+                  ><img src="img/icon/blog.png" alt="블로그"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerArea">
+          <div class="footer_family">
+            <p class="footer_family_a">
+              <a href="http://www.lafumakorea./co.kr" title="lafuma">
+                <img src="img/family0.png" alt="lafuma" />
+              </a>
+            </p>
+            <p class="footer_family_a">
+              <a href="https://www.lafuma.com/fr/" title="lafuma_fr">
+                <img src="img/family1.png" alt="lafuma_fr" />
+              </a>
+            </p>
+            <div class="family_site">
+              <p>
+                <button>FAMILY SITE<span>▼</span></button>
+              </p>
+              <ul>
+                <li>
+                  <a href="http://www.lfcorp.com/" title="LFCORP"> LFCORP </a>
+                </li>
+                <li>
+                  <a href="http://www.daks.co.kr/" title="DAKS"> DAKS </a>
+                </li>
+                <li>
+                  <a href="http://www.tngt.co.kr/index" title="TNGT"> TNGT </a>
+                </li>
+                <li>
+                  <a href="http://www.hazzys.com/" title="HAZZYS"> HAZZYS </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.jillstuart.co.kr/#page-top"
+                    title="JILLSTUART"
+                  >
+                    JILLSTUART
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.maestro.co.kr/" title="MAESTRO">
+                    MAESTRO
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.bluelounge.co.kr/" title="BLUE LOUNGE">
+                    BLUE LOUNGE
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.a-t-corner.com/" title="A.T.CORNER">
+                    A.T.CORNER
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html" title="LFmall"> LFmall </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="copy">
+            <p>copyright (c) 2019 hera_shin all rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
